@@ -1,7 +1,5 @@
 require 'faker'
 
-
-
 puts 'Creating 10 fake jets...'
 10.times do
   jet = Jet.new(
@@ -16,4 +14,3 @@ puts 'Creating 10 fake jets...'
 
   jet.save!
 end
-    
