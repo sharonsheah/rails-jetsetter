@@ -3,6 +3,45 @@
 
 //     text-align: center;
 // }
+.banner {
+    background-size: cover;
+    background-position: center;
+    padding: 150px 100px;
+  }
+  //rails-jetsetter/app/assets/stylesheets/components/_banner.scss
+  //rails-jetsetter/app/assets/images/jet_exterior.png
+
+  .banner h1 {
+    margin: 0;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    font-size: 32px;
+    font-weight: bold;
+  }
+  
+  .banner p {
+    font-size: 20px;
+    color: white;
+    opacity: .7;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    padding-bottom: 50px;
+  }
+
+.banner form {
+    background: white;
+    width: 85vw;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  border-radius: 30px;
+}
+.banner input {
+    border: 0px;
+}
+.banner label {
+    border-right: 1px solid grey;
+    padding-left: 10px;
+}
 
 footer {
     height: 10vh;
@@ -31,3 +70,4 @@ footer {
   .footer-links a:hover {
     opacity: 1;
   }
+
