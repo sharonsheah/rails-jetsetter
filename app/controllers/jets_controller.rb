@@ -1,6 +1,10 @@
 class JetsController < ApplicationController
   def index 
+    if params[:departure].nil?
       @jets = Jet.all
+    else
+      @jets = Jet.where("origin ILIKE ?", "%#{params[:departure]}%")
+    end
   end
 
   def show

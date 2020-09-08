@@ -2,7 +2,10 @@ class BookingsController < ApplicationController
     before_action :set_booking, only: [ :show, :edit, :update ]
     
     def create
-        @booking = Booking.new(params)
+        @booking = Booking.new()
+        #@booking.save!
+        
+        redirect_to booking_path(@booking)
     end
 
     # edit
