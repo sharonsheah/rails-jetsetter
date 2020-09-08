@@ -4,7 +4,9 @@ class JetsController < ApplicationController
   end
 
   def show
+    @params = params
     @jet = Jet.find(params[:id])
     @user = @jet.user
-    end
+    @booking = Booking.new
+  end
 end

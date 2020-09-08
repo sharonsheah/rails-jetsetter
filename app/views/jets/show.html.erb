@@ -3,3 +3,10 @@
 <p>Pilot: <strong><%= @jet.pilot_name %></strong></p>
 <p>Capacity: up to <strong><%= @jet.capacity %></strong> passengers</p>
 <p>Jet Owner: <strong><%= @user.first_name %> <%= @user.last_name %></strong></p>
+
+<%= simple_form_for(@booking) do |f| %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+  <%= f.input :passengers %>
+  <%= f.submit %>
+<% end %>
