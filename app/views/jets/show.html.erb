@@ -6,6 +6,7 @@
 <p>Jet Owner: <strong><%= @user.first_name %> <%= @user.last_name %></strong></p>
 <p>Price per day (non-refundable): <%= @jet.price %></p>
 
+<h3><strong>Booking Form</strong></h3>
 <div class="form-wrapper">
   <%= simple_form_for [@jet, @booking] do |f| %>
     <%= f.input :start_date %>
@@ -16,7 +17,5 @@
     <%= f.hidden_field :booking_status, :value => "Unconfirmed" %>
     <%= f.submit %>
 </div>
-
 <% end %>
-
  
