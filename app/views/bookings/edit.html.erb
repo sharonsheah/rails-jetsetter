@@ -1,0 +1,21 @@
+<h3>Your booking details</h3>
+
+<p>Jet: <%= @booking.jet.name %></p>
+<p>Description: <%= @booking.jet.description %></p>
+<p>Pilot: <strong><%= @booking.jet.pilot_name %></strong></p>
+<p>Capacity: up to <strong><%= @booking.jet.capacity %></strong> passengers</p>
+<p>Jet Owner: <strong><%= @booking.user.first_name %> <%= @booking.user.last_name %></strong></p>
+
+<div class="form-wrapper">
+<%= simple_form_for(@booking) do |f| %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+  <%= f.input :passengers %>
+  <%= f.input :destination %>
+  <%= f.hidden_field :total_price, :value => @booking.jet.price %>
+  <%= f.hidden_field :booking_status, :value => "Unconfirmed" %>
+  <%= f.hidden_field :jet_id, :value => @booking.jet.id %>
+  <%= f.hidden_field :user_id, :value => @booking.jet.user.id %>
+  <%= f.submit %>
+<% end %>
+</div>
