@@ -8,7 +8,5 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   
   resources :bookings, except: [ :index, :destroy ]
-  # get '/jets', to: 'jets#index'
-  # get '/jts/:id', to: "jets#show"
   resources :jets, except: [:destroy]
 end
