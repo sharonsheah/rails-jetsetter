@@ -9,5 +9,5 @@ Rails.application.routes.draw do
 
   # get '/jets', to: 'jets#index'
   # get '/jts/:id', to: "jets#show"
-  resources :jets, only: [:index, :show]
+  resources :jets, except: [:update, :destroy]
 end
