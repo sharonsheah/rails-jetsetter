@@ -1,20 +1,22 @@
-<h1><%= @jet.name %></h1>
+<div class="container m-3">
+  <h1><%= @jet.name %></h1>
 
-<p>Description: <%= @jet.description %></p>
-<p>Pilot: <strong><%= @jet.pilot_name %></strong></p>
-<p>Capacity: up to <strong><%= @jet.capacity %></strong> passengers</p>
-<p>Jet Owner: <strong><%= @user.first_name %> <%= @user.last_name %></strong></p>
-<p>Price per day (non-refundable): <%= @jet.price %></p>
+  <p>Description: <%= @jet.description %></p>
+  <p>Pilot: <strong><%= @jet.pilot_name %></strong></p>
+  <p>Capacity: up to <strong><%= @jet.capacity %></strong> passengers</p>
+  <p>Jet Owner: <strong><%= @user.first_name %> <%= @user.last_name %></strong></p>
+  <p>Price per day (non-refundable): <%= @jet.price %></p>
 
-<h3><strong>Booking Form</strong></h3>
-<div class="form-wrapper">
-  <%= simple_form_for [@jet, @booking] do |f| %>
-    <%= f.input :start_date %>
-    <%= f.input :end_date %>
-    <%= f.input :passengers %>
-    <%= f.input :destination %>
-    <%= f.hidden_field :total_price, :value => @jet.price %>
-    <%= f.hidden_field :booking_status, :value => "Unconfirmed" %>
-    <%= f.submit %>
-  <% end %>
+  <h3><strong>Booking Form</strong></h3>
+  <div class="form-wrapper">
+    <%= simple_form_for [@jet, @booking] do |f| %>
+      <%= f.input :start_date %>
+      <%= f.input :end_date %>
+      <%= f.input :passengers %>
+      <%= f.input :destination %>
+      <%= f.hidden_field :total_price, :value => @jet.price %>
+      <%= f.hidden_field :booking_status, :value => "Unconfirmed" %>
+      <%= f.submit %>
+    <% end %>
+  </div>
 </div>

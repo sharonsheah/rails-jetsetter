@@ -1,12 +1,14 @@
-<h1>Our Elite Fleet</h1>
-<p>Departure: <%= params[:departure] unless params[:departure].nil? %></p>
-<p>Arrival: <%= params[:arrival] unless params[:arrival].nil? %></p>
-<p>Passengers: <%= params[:passengers] unless params[:passengers].nil? %></p>
-<p>Start date:<%= params[:start_date] unless params[:start_date].nil? %></p>
-<p>End date:<%= params[:end_date] unless params[:end_date].nil? %></p>
+<div class="container m-3">
+  <h1>Our Elite Fleet</h1>
+  <p>Departure: <%= params[:departure] unless params[:departure].nil? %></p>
+  <p>Arrival: <%= params[:arrival] unless params[:arrival].nil? %></p>
+  <p>Passengers: <%= params[:passengers] unless params[:passengers].nil? %></p>
+  <p>Start date:<%= params[:start_date] unless params[:start_date].nil? %></p>
+  <p>End date:<%= params[:end_date] unless params[:end_date].nil? %></p>
 
-<ul>
-  <% @jets.each do |jet| %>
-    <li><%= link_to jet.name, jet_path(jet) %></li>
-  <% end %>
-</ul>
+  <ul>
+    <% @jets.each do |jet| %>
+      <li><%= link_to jet.name, jet_path(jet) %></li>
+    <% end %>
+  </ul>
+</div>

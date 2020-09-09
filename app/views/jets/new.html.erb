@@ -1,10 +1,11 @@
-<h3><strong>Enter your jet details</strong></h3>
-<%= simple_form_for (@jet) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :pilot_name %>
-  <%= f.input :capacity %>
-  <%= f.input :origin %>
-  <%= f.input :price %>
-  <%= f.submit %>
-<% end %>
+<div class="container m-3"></div>
+  <h3><strong>Enter your jet details</strong></h3>
+  <%= simple_form_for (@jet) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :pilot_name %>
+    <%= f.input :capacity %>
+    <%= f.input :origin %>
+    <%= f.input :price %>
+    <%= f.submit %>
+  <% end %>
