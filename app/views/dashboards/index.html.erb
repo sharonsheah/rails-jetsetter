@@ -1,0 +1,36 @@
+<h2>Your dashboard</h2>
+
+<table class="table table-sm">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Jet ID</th>
+            <th scope="col">From</th>
+            <th scope="col">Until</th>
+            <th scope="col">Origin</th>
+            <th scope="col">Destination</th>
+            <th scope="col">Passengers</th>
+            <th scope="col">Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+        <% if @user.bookings.present? %>
+            <% @user.bookings.each do |booking| %>
+                <tr>
+                    <th scope="row"><%= booking.id %></th>
+                    <td><%= link_to booking.jet.id, jet_path(booking.jet.id) %></td>
+                    <td><%= booking.start_date %></td>
+                    <td><%= booking.end_date %></td>
+                    <td><%= booking.jet.origin %></td>
+                    <td><%= booking.destination %></td>
+                    <td><%= booking.passengers %></td>
+                    <td><%= booking.booking_status %></td>
+                    <td><%= link_to "Edit", edit_booking_path(booking) %></td>
+                    <td><%= link_to "More Details", booking_path(booking) %></td>
+                </tr>
+            <%end%>
+        <%end%>
+        
+    </tbody>
+</table>
