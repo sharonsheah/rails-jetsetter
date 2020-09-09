@@ -6,6 +6,7 @@
 <p>Capacity: up to <strong><%= @booking.jet.capacity %></strong> passengers</p>
 <p>Jet Owner: <strong><%= @booking.user.first_name %> <%= @booking.user.last_name %></strong></p>
 
+<div class="form-wrapper">
 <%= simple_form_for(@booking) do |f| %>
   <%= f.input :start_date %>
   <%= f.input :end_date %>
@@ -17,3 +18,4 @@
   <%= f.hidden_field :user_id, :value => @booking.jet.user.id %>
   <%= f.submit %>
 <% end %>
+</div>
