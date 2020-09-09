@@ -4,9 +4,8 @@
     background-size: cover;
     background-position: center;
     padding: 150px 100px;
-  }
 
-  .banner h1 {
+  h1 {
     margin: 0;
     color: white;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
@@ -14,7 +13,7 @@
     font-weight: bold;
   }
   
-  .banner p {
+  p {
     font-size: 20px;
     color: white;
     opacity: .7;
@@ -22,20 +21,24 @@
     padding-bottom: 50px;
   }
 
-.banner form {
-    background: white;
-    width: 85vw;
-  display: flex;
-  justify-content: center;
-  margin: 0;
-  border-radius: 30px;
-}
-.banner input {
+  form {
+  //   background: white;
+    display: inline-flex;
+    width: 100%;
+  //   justify-content: center;
+    padding: 10px;
+  //   border-radius: 30px;
+  }
+
+  input {
     border: 0px;
-}
-.banner label {
+    width: 80%;
+  }
+
+  label {
     border-right: 1px solid grey;
     padding-left: 10px;
+  }
 }
 
 footer {
@@ -50,7 +53,7 @@ footer {
     justify-content: space-between;
     padding: 0px 50px;
     color: white;
-  }
+
   .footer-links {
     display: flex;
     align-items: center;
@@ -65,4 +68,4 @@ footer {
   .footer-links a:hover {
     opacity: 1;
   }
-
+}

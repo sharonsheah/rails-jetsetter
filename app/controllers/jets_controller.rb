@@ -1,9 +1,13 @@
 class JetsController < ApplicationController
-  def index 
-    if params[:departure].nil?
-      @jets = Jet.all
+  def index
+    if params[:departure] && params[:passengers]
+      @jets = Jet.where("origin LIKE ? AND capacity >= ?", "#{params[:departure]}", "#{params[:passengers]}")
+    elsif params[:departure]
+      @jets = Jet.where("origin LIKE ?", "#{params[:departure]}")
+    elsif params[:passengers]
+      @jets = Jet.where("capacity >= ?", "#{params[:passengers]}")
     else
-      @jets = Jet.where("origin LIKE ?", "%#{params[:departure]}%")
+      @jets = Jet.all
     end
   end
 
@@ -14,16 +18,16 @@ class JetsController < ApplicationController
   end
 
   def new
-    @user = User.find(params[:user_id])
     @jet = Jet.new
+    @user = @jet.user
   end
 
   def create
     @jet = Jet.new(jet_params)
-    @user = User.find(params[:user_id])
+    @user = current_user
     @jet.user = @user
     if @jet.save
-      redirect_to user_path(@user)
+      redirect_to jets_path
     else
       render :new
     end
