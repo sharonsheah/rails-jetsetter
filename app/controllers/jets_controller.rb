@@ -1,11 +1,16 @@
 class JetsController < ApplicationController
-  def index
-    @jets = Jet.all
+  def index 
+    if params[:departure].nil?
+      @jets = Jet.all
+    else
+      @jets = Jet.where("origin ILIKE ?", "%#{params[:departure]}%")
+    end
   end
 
   def show
     @jet = Jet.find(params[:id])
     @user = @jet.user
+    @booking = Booking.new
   end
 
   def new
@@ -27,6 +32,6 @@ class JetsController < ApplicationController
   private 
 
   def jet_params
-    params.require(:jet).permit(:content)
+    params.require(:jet).permit(:name, :description, :pilot_name, :origin, :capacity, :price)
   end
 end
