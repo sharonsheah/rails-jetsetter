@@ -1,22 +1,8 @@
 require 'faker'
 
-<<<<<<< HEAD
-puts 'Creating 4 fake users...'
-
-4.times do 
-  user = User.new(
-    first_name: Faker::Name.unique.name,
-    last_name: Faker::Name.unique.name,
-    email: Faker::Internet.email,
-    password: "11111111"
-  )
-  user.save!
-end
-
-puts 'Creating 10 fake jets...'
-=======
 puts "Cleaning data..."
 
+Booking.destroy_all
 User.destroy_all
 Jet.destroy_all
 
@@ -32,7 +18,6 @@ default_user = User.new(
 default_user.save!
 
 puts 'Creating 10 fake users...'
->>>>>>> cf13d65130574fb7555e2b55425597e0d8305f05
 
 10.times do
   user = User.new(

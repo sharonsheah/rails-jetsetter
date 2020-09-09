@@ -1,11 +1,11 @@
 class JetsController < ApplicationController
   def index
     if params[:departure] && params[:passengers]
-      @jets = Jet.where("departure LIKE ?", "#{params[:departure]}")
+      @jets = Jet.where("origin LIKE ? AND capacity >= ?", "#{params[:departure]}", "#{params[:passengers]}")
     elsif params[:departure]
-      @jets = Jet.where("departure LIKE ?", "#{params[:departure]}")
+      @jets = Jet.where("origin LIKE ?", "#{params[:departure]}")
     elsif params[:passengers]
-      @jets = Jet.where("passengers LIKE ?", "#{params[:passengers]}")
+      @jets = Jet.where("capacity >= ?", "#{params[:passengers]}")
     else
       @jets = Jet.all
     end
