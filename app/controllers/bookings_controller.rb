@@ -21,7 +21,6 @@ class BookingsController < ApplicationController
     end
 
 
-
     def show; end
 
     private
