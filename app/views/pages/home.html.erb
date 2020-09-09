@@ -1,10 +1,10 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1474302770737-173ee21bab63?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1564&q=80);">
   <div class="container text-center">
-    <h1>Jetsetter</h1>
+    <h1>Jetsetters</h1>
     <p>Live a high life</p>
   </div>
 
-  <div class="container justify-content-center">
+  <div class="container">
 
     <%= form_tag jets_path, method: :get do %>
     <%= text_field_tag :departure,
@@ -42,7 +42,7 @@
   </div>
   
   <div class="container">
-		<div class="row align-items-center">
+		<div class="row justify-content-md-center">
 			<%= link_to 'List your Jet', new_jet_path(@jet), class: "btn btn-primary" %>
 
       <%= link_to 'View all jets', jets_path, class: "btn btn-primary" %>
@@ -50,45 +50,9 @@
   </div>
 </div>
 
-<!--
-    <form class="form-inline" method="get" novalidate>
-        <div class="form-row">
-            <label for="departure">
-                <div class="d-block">
-                    <div class="d-block">Departure</div>
-                    <input type="text" class="form-control" id="departure" placeholder="Departure" value="JFK" required>
-                </div>
-            </label>
-            
-            <label for="arrival">
-                <div class="d-block">
-                    <div class="d-block">Arrival</div>
-                    <input type="text" class="form-control" id="arrival" placeholder="Arrival" value="MIA" required>
-                </div>
-            </label>
-
-            <label for="passenger">
-                <div class="d-block">
-                    <div class="d-block">Passengers</div>
-                    <input type="integer" class="form-control" id="passenger" placeholder="Passengers" aria-describedby="inputGroupPrepend" required>
-                </div>
-            </label>
-        
-            <label for="start_date">
-                <div class="d-block">
-                    <div class="d-block">Start date</div>
-                    <input type="datetime-local" class="form-control" id="start_date" placeholder="Start Date" required>
-                </div>
-            </label>
-
-            <label for="end_date">
-                <div class="d-block">
-                    <div class="d-block">End date</div>
-                    <input type="datetime-local" class="form-control" id="end_date" placeholder="End Date" required>
-                </div>
-            </label>
-
-            <a class="btn btn-light" href="http://localhost:3000/jets"><i class="fas fa-search"></i></a>
-        </div>
-    </form> 
-    -->
+<div class="container my-3 text-center">
+	<div class="about-us">
+		<h2 class="my-3">About Us</h2>
+		<p class="m-3">Luxurious private jets listed for your convience. Live your dream in the clouds.</p>
+	</div>
+</div>
