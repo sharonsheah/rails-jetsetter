@@ -2,6 +2,7 @@ require 'faker'
 
 puts "Cleaning data..."
 
+Booking.destroy_all
 User.destroy_all
 Jet.destroy_all
 
