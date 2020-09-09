@@ -1,0 +1,9 @@
+<%= simple_form_for [ @user, @jet ] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :pilot_name %>
+  <%= f.input :capacity %>
+  <%= f.input :origin %>
+  <%= f.input :price %>
+  <%= f.submit "Submit my Jet", class: "btn btn-primary" %>
+<% end %>

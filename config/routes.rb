@@ -10,5 +10,5 @@ Rails.application.routes.draw do
   resources :bookings, except: [ :index, :destroy ]
   # get '/jets', to: 'jets#index'
   # get '/jts/:id', to: "jets#show"
-  resources :jets, except: [:update, :destroy]
+  resources :jets, except: [:destroy]
 end
