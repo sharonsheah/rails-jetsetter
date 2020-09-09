@@ -32,7 +32,7 @@ end
 puts 'Creating 10 fake jets...'
 100.times do
   jet = Jet.new(
-    name: Faker::Movies::StarWars.character,
+    name: Faker::Name.unique.name,
     description: Faker::Movies::StarWars.quote,
     pilot_name: Faker::Name.unique.name,
     capacity: rand(1..10),
