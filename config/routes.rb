@@ -6,8 +6,11 @@ Rails.application.routes.draw do
   get 'sessions/destroy'
   devise_for :users
   root to: 'pages#home'
-
+  
+  resources :bookings, except: [ :create, :index, :destroy ]
   # get '/jets', to: 'jets#index'
   # get '/jts/:id', to: "jets#show"
-  resources :jets, only: [:index, :show]
+  resources :jets, only: [:index, :show] do
+    resources :bookings, only: [ :create ]
+  end
 end
