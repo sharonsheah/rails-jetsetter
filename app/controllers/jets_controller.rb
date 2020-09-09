@@ -14,8 +14,8 @@ class JetsController < ApplicationController
   end
 
   def new
-    @user = User.find(params[:user_id])
     @jet = Jet.new
+    @user = @jet.user
   end
 
   def create
