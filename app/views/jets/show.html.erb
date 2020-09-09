@@ -4,6 +4,7 @@
 <p>Pilot: <strong><%= @jet.pilot_name %></strong></p>
 <p>Capacity: up to <strong><%= @jet.capacity %></strong> passengers</p>
 <p>Jet Owner: <strong><%= @user.first_name %> <%= @user.last_name %></strong></p>
+<p>Price per day (non-refundable): <%= @jet.price %></p>
 
 <div class="form-wrapper">
   <%= simple_form_for [@jet, @booking] do |f| %>
@@ -16,7 +17,6 @@
     <%= f.submit %>
 </div>
 
-  <p>Total price (non-refundable): <%= @jet.price %></p>
 <% end %>
 
  
