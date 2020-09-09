@@ -9,14 +9,12 @@
   <%= f.input :start_date %>
   <%= f.input :end_date %>
   <%= f.input :passengers %>
-
-  <%= f.hidden_field :total_price, :value => @jet.price%> <!-- CORRECT THIS!! -->
+  <%= f.input :destination %>
+  <%= f.hidden_field :total_price, :value => @jet.price %>
   <%= f.hidden_field :booking_status, :value => "Unconfirmed" %>
-  <%= f.hidden_field :destination, :value => "HELLO" %> <!-- CORRECT THIS!! -->
   <%= f.hidden_field :jet_id, :value => @jet.id %>
-  <%= f.hidden_field :user_id, :value => @user.id %>
+  <%= f.hidden_field :user_id, :value => @jet.user.id %>
   <%= f.submit %>
 <% end %>
 
- t.date "start_date"
  
