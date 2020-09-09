@@ -45,10 +45,12 @@
           <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
         </form>-->
 
-        <!-- <button class="btn btn-outline-light my-2 my-sm-0">Sign up</button>
-        <button class="btn btn-outline-light my-2 my-sm-0" >Log in</button> -->
-      <%= link_to 'Sign up', new_user_registration_path, class: "btn btn-outline-light my-2" %>
-      <%= link_to 'Log in', new_user_session_path, class: "btn btn-outline-light my-2" %>
+        <% if user_signed_in? %>
+          <%= link_to 'Log out', destroy_user_session_path, method: :delete, class: "btn btn-outline-light my-2" %>
+        <% else %>
+          <%= link_to 'Sign up', new_user_registration_path, class: "btn btn-outline-light my-2" %>
+          <%= link_to 'Log in', new_user_session_path, class: "btn btn-outline-light my-2" %>
+        <% end %>
 
       </div>
     </nav>
