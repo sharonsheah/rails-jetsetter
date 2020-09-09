@@ -6,45 +6,79 @@
     <p>Live a high life</p>
   </div>
 
+  <%= form_tag jets_path, method: :get do %>
+    <%= text_field_tag :departure,
+        params[:departure],
+        class: "form-control",
+        placeholder: "departure"
+    %>
 
-    <form class="form-inline" novalidate>
+    <%= text_field_tag :arrival,
+        params[:arrival],
+        class: "form-control",
+        placeholder: "arrival"
+    %>
+
+    <%= number_field_tag :passengers,
+        params[:passengers],
+        class: "form-control",
+        placeholder: "passengers"
+    %>
+
+    <%= date_field_tag :start_date,
+        params[:start_date],
+        class: "form-control",
+        placeholder: "start_date"
+    %>
+
+    <%= date_field_tag :end_date,
+        params[:end_date],
+        class: "form-control",
+        placeholder: "end_date"
+    %>
+
+    <%= submit_tag 'Search', class: "btn btn-primary" %>
+    <% end %>
+<!--
+    <form class="form-inline" method="get" novalidate>
         <div class="form-row">
-            <label for="validationCustom01">
+            <label for="departure">
                 <div class="d-block">
                     <div class="d-block">Departure</div>
-                    <input type="text" class="form-control" id="validationCustom01" placeholder="Departure" value="JFK" required>
+                    <input type="text" class="form-control" id="departure" placeholder="Departure" value="JFK" required>
                 </div>
             </label>
             
-            <label for="validationCustom02">
+            <label for="arrival">
                 <div class="d-block">
                     <div class="d-block">Arrival</div>
-                    <input type="text" class="form-control" id="validationCustom02" placeholder="Arrival" value="MIA" required>
+                    <input type="text" class="form-control" id="arrival" placeholder="Arrival" value="MIA" required>
                 </div>
             </label>
 
-            <label for="validationCustomPassenger">
+            <label for="passenger">
                 <div class="d-block">
-                    <div class="d-block">Passangers</div>
-                    <input type="integer" class="form-control" id="validationCustomPassangers" placeholder="Passangers" aria-describedby="inputGroupPrepend" required>
+                    <div class="d-block">Passengers</div>
+                    <input type="integer" class="form-control" id="passenger" placeholder="Passengers" aria-describedby="inputGroupPrepend" required>
                 </div>
             </label>
         
-            <label for="validationCustom05">
+            <label for="start_date">
                 <div class="d-block">
                     <div class="d-block">Start date</div>
-                    <input type="datetime-local" class="form-control" id="validationCustom05" placeholder="Start Date" required>
+                    <input type="datetime-local" class="form-control" id="start_date" placeholder="Start Date" required>
                 </div>
             </label>
 
-            <label for="validationCustom05">
+            <label for="end_date">
                 <div class="d-block">
                     <div class="d-block">End date</div>
-                    <input type="datetime-local" class="form-control" id="validationCustom05" placeholder="End Date" required>
+                    <input type="datetime-local" class="form-control" id="end_date" placeholder="End Date" required>
                 </div>
             </label>
 
-            <button class="btn btn-light" type="submit"><i class="fas fa-search"></i></button>
+            <a class="btn btn-light" href="http://localhost:3000/jets"><i class="fas fa-search"></i></a>
         </div>
-    </form>
+    </form> 
+    -->
 </div>
