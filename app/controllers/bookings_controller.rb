@@ -10,9 +10,18 @@ class BookingsController < ApplicationController
         redirect_to booking_path(@booking)
     end
 
-    # edit
-    # update
-    def show;end
+    def edit; end
+
+    def update
+        if @booking.update(booking_params)
+            redirect_to booking_path(@booking), notice: 'Booking was successfully updated.'
+        else
+            render :edit
+        end
+    end
+
+
+    def show; end
 
     private
 

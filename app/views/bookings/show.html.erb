@@ -1,5 +1,7 @@
 <h3>Your booking details</h3>
 
+<div class="booking-form">
+<p>Jet: <%= @booking.jet.name %></p>
 <p>Booking status: <%= @booking.booking_status %></p>
 <p>From: <%= @booking.jet.origin %></p>
 <p>To: <%= @booking.destination %></p>
@@ -7,3 +9,5 @@
 <p>End date: <%= @booking.end_date %></p>
 <p>Passengers: <%= @booking.passengers %></p>
 <p>Total price: $ <%= @booking.total_price %></p>
+<%= link_to "Edit booking", edit_booking_path(@booking), class: "btn btn-primary" %>
+</div>
