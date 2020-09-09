@@ -29,16 +29,18 @@ puts 'Creating 10 fake users...'
   user.save!
 end 
 
+locations = ["Melbourne", "Los Angeles", "Singapore", "Beijing", "Bali", "New York", "Dubai", "London"]
+
 puts 'Creating 10 fake jets...'
 100.times do
   jet = Jet.new(
-    name: Faker::Movies::StarWars.character,
+    name: Faker::Name.unique.name,
     description: Faker::Movies::StarWars.quote,
     pilot_name: Faker::Name.unique.name,
     capacity: rand(1..10),
-    origin: Faker::Nation.capital_city,
+    origin: locations.sample,
     price: rand(10000..50000),
-    user_id: User.all[rand(0..3)].id
+    user_id: User.all[rand(0..10)].id
   )
 
   jet.save!
