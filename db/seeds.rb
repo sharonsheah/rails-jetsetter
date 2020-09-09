@@ -38,7 +38,7 @@ puts 'Creating 10 fake jets...'
     capacity: rand(1..10),
     origin: Faker::Nation.capital_city,
     price: rand(10000..50000),
-    user_id: User.all[rand(0..3)].id
+    user_id: User.all[rand(0..10)].id
   )
 
   jet.save!
