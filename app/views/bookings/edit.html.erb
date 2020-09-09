@@ -9,7 +9,7 @@
 
   <div class="form-wrapper">
   <%= simple_form_for(@booking) do |f| %>
-    <%= f.input :start_date %>
+    <%= f.input :start_date, disabled: true%>
     <%= f.input :end_date %>
     <%= f.input :passengers %>
     <%= f.input :destination %>
