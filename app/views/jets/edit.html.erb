@@ -1,3 +1,4 @@
+<div class="container m-3">
 <%= simple_form_for [ @user, @jet ] do |f| %>
   <%= f.input :name %>
   <%= f.input :description %>
@@ -7,3 +8,4 @@
   <%= f.input :price %>
   <%= f.submit "Submit my Jet", class: "btn btn-primary" %>
 <% end %>
+</div>
