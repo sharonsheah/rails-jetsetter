@@ -11,5 +11,7 @@
   <p>Passengers: <%= @booking.passengers %></p>
   <p>Total price: $ <%= @booking.total_price %></p>
   <%= link_to "Edit booking", edit_booking_path(@booking), class: "btn btn-primary" %>
+  <%= link_to "My bookings", user_dashboards_path(@booking.user), class: "btn btn-primary" %>
   </div>
 </div>
+

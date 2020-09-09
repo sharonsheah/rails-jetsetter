@@ -5,5 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :jets, dependent: :destroy
   has_many :bookings
+  has_one :dashboard
   validates :first_name, presence: true, uniqueness: { scope: :last_name }
 end
