@@ -6,6 +6,7 @@
   <p>Capacity: up to <strong><%= @jet.capacity %></strong> passengers</p>
   <p>Jet Owner: <strong><%= @user.first_name %> <%= @user.last_name %></strong></p>
   <p>Price per day (non-refundable): <%= @jet.price %></p>
+  <p>Picture of Jet: <%= cl_image_tag @jet.photo.key, height: 300, width: 400, crop: :fill %></p>
 
   <h3><strong>Booking Form</strong></h3>
   <div class="form-wrapper">
