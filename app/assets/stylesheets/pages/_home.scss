@@ -4,7 +4,6 @@
     background-size: cover;
     background-position: center;
     padding: 150px 80px;
-    margin-top: 0;
 
   h1 {
     margin: 0;
@@ -66,27 +65,30 @@
     .form {
       // background: white;
       // display: inline-flex;
-      // width: 100%;
+      width: 100%;
       align-items: center;
       // justify-content: center;
       // padding: 10px;
-      //   border-radius: 30px;
+      // border-radius: 30px;
     }
   }
 
-
-
-
-
   input {
     border: 0px;
-    width: 80%;
+    width: 100%;
+    align-items: center;
+    display: inline-block;
   }
 
   label {
     border-right: 1px solid grey;
     padding-left: 10px;
   }
+
+}
+
+.offer {
+  margin-bottom: 200px;
 }
 
 footer {

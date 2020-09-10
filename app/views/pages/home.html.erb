@@ -4,7 +4,7 @@
     <p>Live a high life</p>
   </div>
 
-  <div class="container">
+  <div class="container justify-content-center display-inline-block">
 
     <%= form_tag jets_path, method: :get do %>
     <%= text_field_tag :departure,
@@ -53,6 +53,19 @@
   </div>
 </div>
 
+<div class="container">
+  <div class="row col-12 col-md-12 col-lg-6">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1533229613598-751dc97ec35f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" class="card-img-top" alt="list-your-jet">
+    </div>
+  </div>
+  <div class="row col-12 col-md-12 col-lg-6">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1512100356356-de1b84283e18?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=709&q=80" class="card-img-top" alt="list-your-jet">
+    </div>
+  </div>
+</div>
+
 <div class="container my-3 text-center">
 	<div class="about-us">
 		<h2 class="my-3">About Us</h2>
@@ -63,7 +76,6 @@
 <div class="container my-3 text-center">
 	<div class="offer">
 		<h2 class="my-3">What we offer</h2>
-		<p class="m-3">Luxurious private jets listed for your convience. Live your dream in the clouds.</p>
     <ul>
       <li>
       Luxurious features
