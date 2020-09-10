@@ -44,6 +44,7 @@
     
   </ul>
 </div>
+
 <div class="row">
     <% @jets.each do |jet| %>   
      <div class="col-12 col-md-6 col-lg-3">
@@ -63,3 +64,7 @@
     <% end %>
 </div>
 
+<div id="map"
+     style="width: 100%; height: 600px;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>

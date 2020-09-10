@@ -16,25 +16,18 @@ require("channels")
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-
-// ----------------------------------------------------
-// Note(lewagon): ABOVE IS RAILS DEFAULT CONFIGURATION
-// WRITE YOUR OWN JS STARTING FROM HERE 👇
-// ----------------------------------------------------
-
 // External imports
 import "bootstrap";
+import flatpickr from "flatpickr";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
-document.addEventListener('turbolinks:load', () => {
-  // Call your functions here, e.g:
-  // initSelect2();
-});
+import { initMapbox } from '../plugins/init_mapbox';
 
-//= 
-import "flatpickr";
+document.addEventListener('turbolinks:load', () => {
+  initMapbox();
+})
 
 document.addEventListener('DOMContentLoaded', function() {
   flatpickr('.date-field');
