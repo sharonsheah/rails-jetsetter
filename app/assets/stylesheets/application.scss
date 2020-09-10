@@ -11,3 +11,9 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+@import "flatpickr/dist/themes/dark.css";
+
+.booking-form {
+  overflow-y:auto;
+}

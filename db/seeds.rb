@@ -176,7 +176,7 @@ jet_3 = Jet.new(
   user_id: User.all.sample.id
 )
 
-file = URI.open('https://res.cloudinary.com/dfiqhpsxy/image/upload/v1599703273/9_qv0ulf.png')
+file = URI.open('https://res.cloudinary.com/dfiqhpsxy/image/upload/v1599712295/e3w49kow0ditiudx43haqgd7j1cu.png')
 jet_3.photo.attach(io: file, filename: 'jet3.png', content_type: 'image/png')
 
 jet_3.save!
@@ -206,6 +206,9 @@ jet_5 = Jet.new(
   user_id: User.all.sample.id
 )
 
+file = URI.open('https://res.cloudinary.com/dfiqhpsxy/image/upload/v1599703295/17_bmngoc.png')
+jet_5.photo.attach(io: file, filename: 'jet5.png', content_type: 'image/png')
+
 jet_5.save!
 
 jet_6 = Jet.new(
@@ -217,6 +220,8 @@ jet_6 = Jet.new(
   price: rand(10000..50000),
   user_id: User.all.sample.id
 )
+file = URI.open('https://res.cloudinary.com/dfiqhpsxy/image/upload/v1599703310/31_kop429.png')
+jet_6.photo.attach(io: file, filename: 'jet6.png', content_type: 'image/png')
 
 jet_6.save!
 
@@ -229,6 +234,8 @@ jet_7 = Jet.new(
   price: rand(10000..50000),
   user_id: User.all.sample.id
 )
+file = URI.open('https://res.cloudinary.com/dfiqhpsxy/image/upload/v1599703326/39_j0urdp.png')
+jet_7.photo.attach(io: file, filename: 'jet7.png', content_type: 'image/png')
 
 jet_7.save!
 
@@ -241,6 +248,8 @@ jet_8 = Jet.new(
   price: rand(10000..50000),
   user_id: User.all.sample.id
 )
+file = URI.open('https://res.cloudinary.com/dfiqhpsxy/image/upload/v1599703325/40_fg728p.png')
+jet_8.photo.attach(io: file, filename: 'jet8.png', content_type: 'image/png')
 
 jet_8.save!
 
@@ -253,6 +262,8 @@ jet_9 = Jet.new(
   price: rand(10000..50000),
   user_id: User.all.sample.id
 )
+file = URI.open('https://res.cloudinary.com/dfiqhpsxy/image/upload/v1599703324/38_ziveys.png')
+jet_9.photo.attach(io: file, filename: 'jet9.png', content_type: 'image/png')
 
 jet_9.save!
 
@@ -265,6 +276,8 @@ jet_10 = Jet.new(
   price: rand(10000..50000),
   user_id: User.all.sample.id
 )
+file = URI.open('https://res.cloudinary.com/dfiqhpsxy/image/upload/v1599703301/11_yyxmuy.png')
+jet_10.photo.attach(io: file, filename: 'jet10.png', content_type: 'image/png')
 
 jet_10.save!
 
@@ -277,6 +290,8 @@ jet_11 = Jet.new(
   price: rand(10000..50000),
   user_id: User.all.sample.id
 )
+file = URI.open('https://res.cloudinary.com/dfiqhpsxy/image/upload/v1599703299/22_cg5hwo.png')
+jet_11.photo.attach(io: file, filename: 'jet11.png', content_type: 'image/png')
 
 jet_11.save!
 
@@ -290,6 +305,8 @@ jet_12 = Jet.new(
   price: rand(10000..50000),
   user_id: User.all.sample.id
 )
+file = URI.open('https://res.cloudinary.com/dfiqhpsxy/image/upload/v1599703328/41_swanzv.png')
+jet_12.photo.attach(io: file, filename: 'jet12.png', content_type: 'image/png')
 
 jet_12.save!
 
@@ -302,6 +319,8 @@ jet_13 = Jet.new(
   price: rand(10000..50000),
   user_id: User.all.sample.id
 )
+file = URI.open('https://res.cloudinary.com/dfiqhpsxy/image/upload/v1599703298/20_vpszbs.png')
+jet_13.photo.attach(io: file, filename: 'jet13.png', content_type: 'image/png')
 
 jet_13.save!
 
@@ -314,6 +333,8 @@ jet_14 = Jet.new(
   price: rand(10000..50000),
   user_id: User.all.sample.id
 )
+file = URI.open('https://res.cloudinary.com/dfiqhpsxy/image/upload/v1599703298/20_vpszbs.png')
+jet_14.photo.attach(io: file, filename: 'jet14.png', content_type: 'image/png')
 
 jet_14.save!
 
@@ -326,6 +347,8 @@ jet_15 = Jet.new(
   price: rand(10000..50000),
   user_id: User.all.sample.id
 )
+file = URI.open('https://res.cloudinary.com/dfiqhpsxy/image/upload/v1599703300/12_cnuwmx.png')
+jet_15.photo.attach(io: file, filename: 'jet15.png', content_type: 'image/png')
 
 jet_15.save!
 
@@ -338,6 +361,8 @@ jet_16 = Jet.new(
   price: rand(10000..50000),
   user_id: User.all.sample.id
 )
+file = URI.open('https://res.cloudinary.com/dfiqhpsxy/image/upload/v1599703327/32_vg4d59.png')
+jet_16.photo.attach(io: file, filename: 'jet16.png', content_type: 'image/png')
 
 jet_16.save!
 
@@ -350,6 +375,8 @@ jet_17 = Jet.new(
   price: rand(10000..50000),
   user_id: User.all.sample.id
 )
+file = URI.open('https://res.cloudinary.com/dfiqhpsxy/image/upload/v1599703264/5_jdamfp.png')
+jet_17.photo.attach(io: file, filename: 'jet17.png', content_type: 'image/png')
 
 jet_17.save!
 
@@ -362,6 +389,8 @@ jet_18 = Jet.new(
   price: rand(10000..50000),
   user_id: User.all.sample.id
 )
+file = URI.open('https://res.cloudinary.com/dfiqhpsxy/image/upload/v1599703254/2_imchsd.png')
+jet_18.photo.attach(io: file, filename: 'jet18.png', content_type: 'image/png')
 
 jet_18.save!
 
@@ -374,6 +403,8 @@ jet_19 = Jet.new(
   price: rand(10000..50000),
   user_id: User.all.sample.id
 )
+file = URI.open('https://res.cloudinary.com/dfiqhpsxy/image/upload/v1599703272/10_xsnafh.png')
+jet_19.photo.attach(io: file, filename: 'jet19.png', content_type: 'image/png')
 
 jet_19.save!
 
@@ -386,5 +417,7 @@ jet_20 = Jet.new(
   price: rand(10000..50000),
   user_id: User.all.sample.id
 )
+file = URI.open('https://res.cloudinary.com/dfiqhpsxy/image/upload/v1599703327/42_ufzqho.png')
+jet_20.photo.attach(io: file, filename: 'jet20.png', content_type: 'image/png')
 
 jet_20.save!
