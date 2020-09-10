@@ -9,10 +9,11 @@ class JetsController < ApplicationController
     else
       @jets = Jet.all
 
-      @markers = @jets.geocoded.map do |flat|
+      @markers = @jets.geocoded.map do |jet|
       {
         lat: jet.latitude,
-        lng: jet.longitude
+        lng: jet.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { flat: flat })
       }
       end
     end

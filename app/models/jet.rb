@@ -8,5 +8,4 @@ class Jet < ApplicationRecord
   validates :description, presence: true, length: { minimum: 3 }
   validates :capacity, :price, presence: true, numericality: { only_integer: true }
   validates :pilot_name, :origin, presence: true
-
 end
