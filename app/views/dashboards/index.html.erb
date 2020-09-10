@@ -1,9 +1,10 @@
-<div class="container">
-    <h2>Your bookings</h2>
+<div class="tabs-container">
 
     <% bookings = [] %>
     <% listings = [] %>
 
+    <h2>Your bookings</h2>
+   
     <% if @user.bookings.present? %>
         <% @user.bookings.each do |booking| %>
             <% if booking.jet.user === current_user %>
@@ -12,25 +13,25 @@
                 <% bookings << booking %>
             <% end %>
         <%end%>
-    <%end%>
+    <% end %>
 
-    <table class="table table-sm">
-        <thead>
-            <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Jet Name</th>
-                <th scope="col">Owner</th>
-                <th scope="col">From</th>
-                <th scope="col">Until</th>
-                <th scope="col">Origin</th>
-                <th scope="col">Destination</th>
-                <th scope="col">Passengers</th>
-                <th scope="col">Status</th>
-                <th scope="col" colspan="2">Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            <% if bookings.present? %>
+    <% if bookings.present? %>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Jet Name</th>
+                    <th>Owner</th>
+                    <th>From</th>
+                    <th>Until</th>
+                    <th>Origin</th>
+                    <th>Destination</th>
+                    <th>Passengers</th>
+                    <th>Status</th>
+                    <th colspan="2">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
                 <% bookings.each do |booking| %>
                     <tr>
                         <th scope="row"><%= booking.id %></th>
@@ -46,29 +47,33 @@
                         <td><%= link_to icon('fas', 'info-circle'), booking_path(booking), { class: "Show Details"} %></td>
                     </tr>
                 <%end%>
-            <%end%>
-        </tbody>
-    </table>
+            </tbody>
+        </table>
+    <% else %>
+        <div class="notice">You don't have any booking yet</div>
+    <% end %>
+</div>
 
+
+<div class="tabs-container">
     <h2>Your listings</h2>
-
-    <table class="table table-sm">
-        <thead>
-            <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Jet Name</th>
-                <th scope="col">Renter</th>
-                <th scope="col">From</th>
-                <th scope="col">Until</th>
-                <th scope="col">Origin</th>
-                <th scope="col">Destination</th>
-                <th scope="col">Passengers</th>
-                <th scope="col">Status</th>
-                <th scope="col" colspan="3">Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            <% if listings.present? %>
+    <% if listings.present? %>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Jet Name</th>
+                    <th>Renter</th>
+                    <th>From</th>
+                    <th>Until</th>
+                    <th>Origin</th>
+                    <th>Destination</th>
+                    <th>Passengers</th>
+                    <th>Status</th>
+                    <th colspan="3">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
                 <% listings.each do |booking| %>
                     <tr>
                         <th scope="row"><%= booking.id %></th>
@@ -87,8 +92,11 @@
                         <td><%= link_to icon('fas', 'info-circle'), booking_path(booking), { class: "Show Details"} %></td>
                     </tr>
                 <%end%>
-            <%end%>
-        </tbody>
-    </table>
-    <%= link_to 'Back', :back %>
+            
+            </tbody>
+        </table>
+    <% else %>
+        <div class="notice">You don't have any listing yet</div>
+    <% end %>
 </div>
+<%= link_to 'Back', :back %>
