@@ -41,8 +41,22 @@
     <% end %>
   </div>
   <ul>
-    <% @jets.each do |jet| %>
-      <li><%= link_to jet.name, jet_path(jet) %></li>
-    <% end %>
+    
   </ul>
 </div>
+<div class="row">
+    <% @jets.each do |jet| %>
+      <div class="col-12 col-md-6 col-lg-3">
+      <% if jet.photo.attached? %>
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path jet.photo.key %>')">
+      <% else %>
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://source.unsplash.com/500x400/?cocktail');">
+      <% end %>
+          <div class="card-description">
+            <h2><%= jet.name %></h2>
+          </div>
+          <%= link_to "", jet_path(jet), class: 'card-link' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
