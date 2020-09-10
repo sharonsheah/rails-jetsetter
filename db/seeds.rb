@@ -147,7 +147,7 @@ jet_1 = Jet.new(
   user_id: User.all.sample.id
 )
 
-file = URI.open('https://res.cloudinary.com/dfiqhpsxy/image/upload/v1599703273/9_qv0ulf.png')
+file = URI.open('https://res.cloudinary.com/dfiqhpsxy/image/upload/v1599703279/8_c7s9e9.png')
 jet_1.photo.attach(io: file, filename: 'jet1.png', content_type: 'image/png')
 
 jet_1.save!
