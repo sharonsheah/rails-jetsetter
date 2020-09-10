@@ -17,10 +17,14 @@ const initMapbox = () => {
     markers.forEach((marker) => {
       new mapboxgl.Marker()
         .setLngLat([marker.lng, marker.lat])
+        .setPopup(popup)
         .addTo(map);
+      const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
     });
+    
     fitMapToMarkers(map, markers);
   }
+  
 };
 
 export { initMapbox };

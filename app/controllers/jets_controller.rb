@@ -13,7 +13,7 @@ class JetsController < ApplicationController
       {
         lat: jet.latitude,
         lng: jet.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { flat: flat })
+        infoWindow: render_to_string(partial: "info_window", locals: { jet: jet })
       }
       end
     end
