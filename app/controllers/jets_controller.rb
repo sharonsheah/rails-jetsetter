@@ -8,6 +8,13 @@ class JetsController < ApplicationController
       @jets = Jet.where("capacity >= ?", "#{params[:passengers]}")
     else
       @jets = Jet.all
+
+      @markers = @jets.geocoded.map do |flat|
+      {
+        lat: jet.latitude,
+        lng: jet.longitude
+      }
+      end
     end
   end
 
