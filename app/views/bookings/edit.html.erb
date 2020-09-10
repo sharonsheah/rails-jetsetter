@@ -6,7 +6,7 @@
   <p>Pilot: <strong><%= @booking.jet.pilot_name %></strong></p>
   <p>Capacity: up to <strong><%= @booking.jet.capacity %></strong> passengers</p>
   <p>Jet Owner: <strong><%= @booking.user.first_name %> <%= @booking.user.last_name %></strong></p>
-
+  
   <div class="form-wrapper">
   <%= simple_form_for(@booking) do |f| %>
     <%= f.input :start_date, as: :string, input_html: { class: 'date-field' } %>

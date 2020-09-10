@@ -11,9 +11,11 @@
     <p>Passengers: <%= @booking.passengers %></p>
     <p>Total price: $ <%= @booking.total_price %></p>
 
-    <% if (@booking.jet.user === @booking.user)%>
-      <%= link_to "Accept", booking_path(@booking, booking: {booking_status: "Confirmed"}), method: "patch", class: "btn btn-primary" %>
-      <%= link_to "Reject", booking_path(@booking, booking: {booking_status: "Rejected"}), method: "patch", class: "btn btn-danger" %>
+    <% if (@booking.jet.user === @booking.user) %>
+      <% if (@booking.booking_status === "Unconfirmed") %>
+        <%= link_to "Accept", booking_path(@booking, booking: {booking_status: "Confirmed"}), method: "patch", class: "btn btn-primary" %>
+        <%= link_to "Reject", booking_path(@booking, booking: {booking_status: "Rejected"}), method: "patch", class: "btn btn-danger" %>
+      <% end %>
     <% else %>
       <%= link_to "Edit booking", edit_booking_path(@booking), class: "btn btn-primary" %>
     <% end %>
