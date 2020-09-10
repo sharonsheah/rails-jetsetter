@@ -1,3 +1,4 @@
+
 require 'faker'
 require "open-uri"
 
@@ -176,7 +177,7 @@ jet_3 = Jet.new(
   user_id: User.all.sample.id
 )
 
-file = URI.open('https://res.cloudinary.com/dfiqhpsxy/image/upload/v1599712295/e3w49kow0ditiudx43haqgd7j1cu.png')
+file = URI.open('https://res.cloudinary.com/dfiqhpsxy/image/upload/v1599716684/ehm4cys8xp0fc49zo8gs0js7begi.png')
 jet_3.photo.attach(io: file, filename: 'jet3.png', content_type: 'image/png')
 
 jet_3.save!
