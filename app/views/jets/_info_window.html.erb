@@ -1,4 +1,4 @@
-<h2><%= jet.name %></h2>
-<p>Fly with <%= jet.pilot_name %></p>
-<p>Up to <%= jet.capacity %></p>
-<p>Owned by <%= jet.user_id %></p>
+<h3><%= jet.name %></h3>
+<p>Fly with <strong><%= jet.pilot_name %></strong></p>
+<p>Up to <strong><%= jet.capacity %></strong></p>
+<p>Owned by <strong><%= jet.user.first_name %> <%= jet.user.last_name %></strong></p>
