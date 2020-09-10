@@ -42,29 +42,26 @@
   </div>
 </div> 
 
-<div class="container">
-	<div class="row justify-content-md-center m-3">
-    <div class="card m-3 p-6">
-      <%= link_to 'List your Jet', new_jet_path(@jet), class: "card-img-top" %>
-    </div>
-    <div class="card m-3 p-6">
-      <%= link_to 'View all jets', jets_path, class: "card-img-top" %>
+<%# cards need fixing %>
+<div class="container my-3">
+  <div class="row">
+    <div class="col-12 col-lg-6">
+      <div class="cards">
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1533229613598-751dc97ec35f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80)">
+          List Your Jet
+        </div>
+      </div>
+      <div class="col-12 col-lg-6">
+        <div class="cards">
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1512100356356-de1b84283e18?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=709&q=80)">
+            View Our Elite Fleet
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
-<div class="container">
-  <div class="row col-12 col-md-12 col-lg-6">
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1533229613598-751dc97ec35f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" class="card-img-top" alt="list-your-jet">
-    </div>
-  </div>
-  <div class="row col-12 col-md-12 col-lg-6">
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1512100356356-de1b84283e18?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=709&q=80" class="card-img-top" alt="list-your-jet">
-    </div>
-  </div>
-</div>
 
 <div class="container my-3 text-center">
 	<div class="about-us">
@@ -76,21 +73,7 @@
 <div class="container my-3 text-center">
 	<div class="offer">
 		<h2 class="my-3">What we offer</h2>
-    <div class="cards">
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-        Breakfast
-      </div>
-
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
-        Lunch
-      </div>
-
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
-        Dinner
-      </div>
-    </div>
-
-  </div>
+    <p>A description and icons for what services we offer</p>
 </div>
 
 <footer>
