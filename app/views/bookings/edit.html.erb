@@ -6,19 +6,17 @@
   <p>Pilot: <strong><%= @booking.jet.pilot_name %></strong></p>
   <p>Capacity: up to <strong><%= @booking.jet.capacity %></strong> passengers</p>
   <p>Jet Owner: <strong><%= @booking.user.first_name %> <%= @booking.user.last_name %></strong></p>
-
-
-  <% if current_user === @booking.user %>
-    <div class="form-wrapper">
-      <%= simple_form_for(@booking) do |f| %>
-        <%= f.input :start_date, disabled: true%>
-        <%= f.input :end_date %>
-        <%= f.input :passengers, collection: 1..50 %>
-        <%= f.input :destination %>
-        <%= f.hidden_field :total_price, :value => @booking.jet.price %>
-        <%= f.hidden_field :booking_status, :value => "Unconfirmed" %>
-        <%= f.submit %>
-      <% end %>
-    </div>
+  
+  <div class="form-wrapper">
+  <%= simple_form_for(@booking) do |f| %>
+    <%= f.input :start_date, as: :string, input_html: { class: 'date-field' } %>
+    <%= f.input :end_date, as: :string, input_html: { class: 'date-field' }  %>
+    <%= f.input :passengers %>
+    <%= f.input :destination %>
+    <%= f.hidden_field :total_price, :value => @booking.jet.price %>
+    <%= f.hidden_field :booking_status, :value => "Unconfirmed" %>
+    <%= f.hidden_field :jet_id, :value => @booking.jet.id %>
+    <%= f.hidden_field :user_id, :value => @booking.jet.user.id %>
+    <%= f.submit %>
   <% end %>
 </div>
