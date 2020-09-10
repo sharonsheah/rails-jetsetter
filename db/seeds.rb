@@ -26,7 +26,8 @@ user_1 = User.new(
     email: "taylorswift@user.com",
     password: "password"
   )
-
+  file = URI.open('https://res.cloudinary.com/dfiqhpsxy/image/upload/v1599714068/rmxntpxajibcwjdxwhxb.jpg')
+  user_1.photo.attach(io: file, filename: 'user1.png', content_type: 'image/png')
 user_1.save!
 
 user_2 = User.new(
@@ -35,6 +36,8 @@ user_2 = User.new(
     email: "billgates@user.com",
     password: "password"
   )
+  file = URI.open('https://res.cloudinary.com/dfiqhpsxy/image/upload/v1599715437/billgates_ubwsly.jpg')
+  user_2.photo.attach(io: file, filename: 'user2.png', content_type: 'image/png')
 
 user_2.save!
 
@@ -44,6 +47,8 @@ user_3 = User.new(
     email: "tigerwoods@user.com",
     password: "password"
   )
+  file = URI.open('https://res.cloudinary.com/dfiqhpsxy/image/upload/v1599715438/tigerwoods_d93mqi.jpg')
+  user_3.photo.attach(io: file, filename: 'user3.png', content_type: 'image/png')
 
 user_3.save!
 
@@ -53,6 +58,8 @@ user_4 = User.new(
     email: "beyonceknowles@user.com",
     password: "password"
   )
+  file = URI.open('https://res.cloudinary.com/dfiqhpsxy/image/upload/v1599715437/beyonce_vcm0ns.png')
+  user_4.photo.attach(io: file, filename: 'user4.png', content_type: 'image/png')
 
 user_4.save!
 
@@ -62,6 +69,8 @@ user_5 = User.new(
     email: "davidbeckham@user.com",
     password: "password"
   )
+  file = URI.open('https://res.cloudinary.com/dfiqhpsxy/image/upload/v1599715436/Davidbeckham_rk5r5h.jpg')
+  user_5.photo.attach(io: file, filename: 'user5.png', content_type: 'image/png')
 
 user_5.save!
 
@@ -71,6 +80,8 @@ user_6 = User.new(
     email: "justinbieber@user.com",
     password: "password"
   )
+  file = URI.open('https://res.cloudinary.com/dfiqhpsxy/image/upload/v1599715438/Justinbieber_vehf5v.jpg')
+  user_6.photo.attach(io: file, filename: 'user6.png', content_type: 'image/png')
 
 user_6.save!
 
@@ -80,6 +91,8 @@ user_7 = User.new(
     email: "tomcruise@user.com",
     password: "password"
   )
+  file = URI.open('https://res.cloudinary.com/dfiqhpsxy/image/upload/v1599715438/tomcruise_rt7cdd.jpg')
+  user_7.photo.attach(io: file, filename: 'user7.png', content_type: 'image/png')
 
 user_7.save!
 
@@ -89,6 +102,8 @@ user_8 = User.new(
     email: "elonmusk@user.com",
     password: "password"
   )
+  file = URI.open('https://res.cloudinary.com/dfiqhpsxy/image/upload/v1599715437/elonmusk_kqt29v.jpg')
+  user_8.photo.attach(io: file, filename: 'user8.png', content_type: 'image/png')
 
 user_8.save!
 
@@ -98,6 +113,8 @@ user_9 = User.new(
     email: "jeffbezos@user.com",
     password: "password"
   )
+  file = URI.open('https://res.cloudinary.com/dfiqhpsxy/image/upload/v1599715437/jeffbezos_xbde27.jpg')
+  user_9.photo.attach(io: file, filename: 'user9.png', content_type: 'image/png')
 
 user_9.save!
 
@@ -107,6 +124,8 @@ user_10 = User.new(
     email: "therock@user.com",
     password: "password"
   )
+  file = URI.open('https://res.cloudinary.com/dfiqhpsxy/image/upload/v1599715437/therock_juydwt.jpg')
+  user_10.photo.attach(io: file, filename: 'user10.png', content_type: 'image/png')
 
 user_10.save!
 
@@ -116,6 +135,8 @@ user_11 = User.new(
     email: "djkhaled@user.com",
     password: "password"
   )
+  file = URI.open('https://res.cloudinary.com/dfiqhpsxy/image/upload/v1599715437/djkhaled_ifcf52.jpg')
+  user_11.photo.attach(io: file, filename: 'user11.png', content_type: 'image/png')
 
 user_11.save!
 
@@ -125,6 +146,8 @@ user_12 = User.new(
     email: "lebronjames@user.com",
     password: "password"
   )
+  file = URI.open('https://res.cloudinary.com/dfiqhpsxy/image/upload/v1599715438/lebron_lvit3j.jpg')
+  user_12.photo.attach(io: file, filename: 'user12.png', content_type: 'image/png')
 
 user_12.save!
 
@@ -176,7 +199,7 @@ jet_3 = Jet.new(
   user_id: User.all.sample.id
 )
 
-file = URI.open('https://res.cloudinary.com/dfiqhpsxy/image/upload/v1599712295/e3w49kow0ditiudx43haqgd7j1cu.png')
+file = URI.open('https://res.cloudinary.com/dfiqhpsxy/image/upload/v1599716684/ehm4cys8xp0fc49zo8gs0js7begi.png')
 jet_3.photo.attach(io: file, filename: 'jet3.png', content_type: 'image/png')
 
 jet_3.save!
