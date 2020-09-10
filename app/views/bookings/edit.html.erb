@@ -1,14 +1,28 @@
-<div class="container">
-  <h3>Your booking details</h3>
+<div class="booking cont m-3">
+  <div class="card-trip">
+    
+    <div class="card-trip-infos">
+      <div class="w-100">
+         <% if (@booking.jet.user === @booking.user) %>
+          <% if (@booking.booking_status === "Unconfirmed") %>
+            <%= link_to "Accept", booking_path(@booking, booking: {booking_status: "Confirmed"}), method: "patch", class: "btn btn-primary" %>
+            <%= link_to "Reject", booking_path(@booking, booking: {booking_status: "Rejected"}), method: "patch", class: "btn btn-danger" %>
+          <% end %>
+        <% end %>
+        <h2>Booking details</h2>
+        <hr>
+        <p><b>Jet:</b> <%= @booking.jet.name %></p>
+        <p><b>Booking status:</b> <%= @booking.booking_status %></p>
+        <p><b>From:</b> <%= @booking.jet.origin %></p>
+        <p><b>To:</b> <%= @booking.destination %></p>
+        <p><b>Start date:</b> <%= @booking.start_date %></p>
+        <p><b>End date:</b> <%= @booking.end_date %></p>
+        <p><b>Passengers:</b> <%= @booking.passengers %></p>
+        <p><b>Total price:</b> $<%= @booking.total_price %></p>
+      </div>
+    </div>
 
-  <p>Jet: <%= @booking.jet.name %></p>
-  <p>Description: <%= @booking.jet.description %></p>
-  <p>Pilot: <strong><%= @booking.jet.pilot_name %></strong></p>
-  <p>Capacity: up to <strong><%= @booking.jet.capacity %></strong> passengers</p>
-  <p>Jet Owner: <strong><%= @booking.user.first_name %> <%= @booking.user.last_name %></strong></p>
-  
-  <div class="form-wrapper">
-  <%= simple_form_for(@booking) do |f| %>
+    <%= simple_form_for(@booking) do |f| %>
     <%= f.input :start_date, as: :string, input_html: { class: 'date-field' } %>
     <%= f.input :end_date, as: :string, input_html: { class: 'date-field' }  %>
     <%= f.input :passengers %>
@@ -18,5 +32,7 @@
     <%= f.hidden_field :jet_id, :value => @booking.jet.id %>
     <%= f.hidden_field :user_id, :value => @booking.jet.user.id %>
     <%= f.submit %>
-  <% end %>
+<% end %>
+  </div>
 </div>
+
