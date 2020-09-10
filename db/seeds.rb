@@ -19,22 +19,6 @@ default_user = User.new(
 
 default_user.save!
 
-# puts 'Creating 10 default reservations for default user...'
-
-# 10.times do
-#   booking = Booking.new(
-#     start_date: 20201010,
-#     end_date: 20201010,
-#     passengers: 1,
-#     total_price: 1000,
-#     booking_status: "Unconfirmed",
-#     destination: "Miami",
-#     jet: Jet.all.find(41),
-#     user: User.all.find(53)
-#   )
-#   booking.save!
-# end
-
 puts 'Creating 12 users...'
 
 user_1 = User.new(
