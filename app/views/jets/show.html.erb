@@ -13,7 +13,7 @@
     <%= simple_form_for [@jet, @booking] do |f| %>
       <%= f.input :start_date %>
       <%= f.input :end_date %>
-      <%= f.input :passengers %>
+      <%= f.input :passengers, collection: 1..50 %>
       <%= f.input :destination %>
       <%= f.hidden_field :total_price, :value => @jet.price %>
       <%= f.hidden_field :booking_status, :value => "Unconfirmed" %>
