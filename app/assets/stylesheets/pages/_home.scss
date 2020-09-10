@@ -22,7 +22,7 @@
   }
 
   form {
-  //   background: white;
+  // //   background: white;
     display: inline-flex;
     width: 100%;
   //   justify-content: center;
@@ -72,12 +72,15 @@ footer {
 
 .jet-card {
   overflow: hidden;
+  height: 900px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
 .jet-card > img {
   object-fit: cover;
+  height: 400px;
+  width: 100%; 
 }
 
 .jet-card h2 {
@@ -92,7 +95,7 @@ footer {
   margin: 0;
 }
 
-.jet-card .jet-info {
+.jet-card .jet-info-card {
   padding: 16px;
   display: flex;
   justify-content: space-between;

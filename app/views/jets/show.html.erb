@@ -1,31 +1,31 @@
-<div class="jet-card m-3 row justify-content-md-center">
-<div class="col-12 col-md-8">
+<div class="jet-card m-4 row justify-content-md-center">
+<div class="jet-image col-12 col-md-8 mt-3">
   <%= cl_image_tag @jet.photo.key, crop: :fill %>
-  <div class="jet-info">
-    <div>
-      <h1><%= @jet.name %></h1>
-      <p>Description: <%= @jet.description %></p>
-      <p>Pilot: <strong><%= @jet.pilot_name %></strong></p>
-      <p>Capacity: up to <strong><%= @jet.capacity %></strong> passengers</p>
-    </div>
+  <div class="jet-info-card">
+      <div class="jet-info">
+        <h1><%= @jet.name %></h1>
+        <p>Description: <%= @jet.description %></p>
+        <p>Pilot: <strong><%= @jet.pilot_name %></strong></p>
+        <p>Capacity: up to <strong><%= @jet.capacity %></strong> passengers</p>
+      </div>
     <h2 class="jet-pricing">$<%= @jet.price %></h2>
     <p>Jet Owner: <strong><%= @user.first_name %> <%= @user.last_name %></strong></p>
     <%= cl_image_tag @user.photo.key, height: 100, width: 100, crop: :fill, class: "avatar-bordered" %>
   </div>
 </div>
 
-<div class="jet-booking-form col-6 col-md-4">
-  <h3><strong>Booking Form</strong></h3>
-  <div class="form-wrapper">
-    <%= simple_form_for [@jet, @booking] do |f| %>
-      <%= f.input :start_date, as: :string, input_html: { class: 'date-field' } %>
-      <%= f.input :end_date, as: :string, input_html: { class: 'date-field' }  %>
-      <%= f.input :passengers %>
-      <%= f.input :destination %>
-      <%= f.hidden_field :total_price, :value => @jet.price %>
-      <%= f.hidden_field :booking_status, :value => "Unconfirmed" %>
-      <%= f.submit %>
-    <% end %>
+  <div class="jet-booking-form col-6 col-md-4">
+    <h3 class= p-3><strong>Booking Form</strong></h3>
+    <div class="form-group ">
+      <%= simple_form_for [@jet, @booking] do |f| %>
+        <%= f.input :start_date, as: :string, input_html: { class: 'date-field' } %>
+        <%= f.input :end_date, as: :string, input_html: { class: 'date-field' }  %>
+        <%= f.input :passengers %>
+        <%= f.input :destination %>
+        <%= f.hidden_field :total_price, :value => @jet.price %>
+        <%= f.hidden_field :booking_status, :value => "Unconfirmed" %>
+        <%= f.submit %>
+      <% end %>
+    </div>
   </div>
-</div>
 </div>
