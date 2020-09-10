@@ -39,11 +39,15 @@
 
     <%= submit_tag 'Search', class: "btn btn-primary" %>
     <% end %>
-  
-  <div class="container">
-		<div class="row justify-content-md-center">
-			<%= link_to 'List your Jet', new_jet_path(@jet), class: "btn btn-primary" %>
+  </div>
+</div> 
 
+<div class="container">
+	<div class="row justify-content-md-center m-3">
+    <div class="m-3">
+      <%= link_to 'List your Jet', new_jet_path(@jet), class: "btn btn-primary" %>
+    </div>
+    <div class="m-3">
       <%= link_to 'View all jets', jets_path, class: "btn btn-primary" %>
     </div>
   </div>
@@ -53,7 +57,14 @@
 	<div class="about-us">
 		<h2 class="my-3">About Us</h2>
 		<p class="m-3">Luxurious private jets listed for your convience. Live your dream in the clouds.</p>
-	</div>
+  </div>
+</div>
+
+<div class="container my-3 text-center">
+	<div class="">
+		<h2 class="my-3">What we offer</h2>
+		<p class="m-3">Luxurious private jets listed for your convience. Live your dream in the clouds.</p>
+  </div>
 </div>
 
 <footer>
