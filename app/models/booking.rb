@@ -1,4 +1,5 @@
 class Booking < ApplicationRecord
+  STATUS = ["Unconfirmed", "Confirmed", "Rejected", "Cancelled"]
   belongs_to :jet
   belongs_to :user
 
@@ -7,4 +8,5 @@ class Booking < ApplicationRecord
   validates :end_date, presence: true
   validates :destination, presence: true
   validates :total_price, presence: true
+  validates :booking_status, inclusion: { in: Booking::STATUS }
 end
