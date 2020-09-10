@@ -9,8 +9,8 @@
 
   <div class="form-wrapper">
   <%= simple_form_for(@booking) do |f| %>
-    <%= f.input :start_date, disabled: true%>
-    <%= f.input :end_date %>
+    <%= f.input :start_date, as: :string, input_html: { class: 'date-field' } %>
+    <%= f.input :end_date, as: :string, input_html: { class: 'date-field' }  %>
     <%= f.input :passengers %>
     <%= f.input :destination %>
     <%= f.hidden_field :total_price, :value => @booking.jet.price %>
