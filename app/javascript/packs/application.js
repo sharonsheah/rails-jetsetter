@@ -32,7 +32,7 @@ document.addEventListener('turbolinks:load', () => {
 
 import flatpickr from "flatpickr";
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('turbolinks:load', function() {
   flatpickr('.date-field');
 })
 
