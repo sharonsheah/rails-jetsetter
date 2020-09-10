@@ -1,16 +1,67 @@
-<div class="container m-3">
-  <h1>Our Elite Fleet</h1>
-  <p>Departure: <%= params[:departure] unless params[:departure].nil? %></p>
-  <p>Arrival: <%= params[:arrival] unless params[:arrival].nil? %></p>
-  <p>Passengers: <%= params[:passengers] unless params[:passengers].nil? %></p>
-  <p>Start date:<%= params[:start_date] unless params[:start_date].nil? %></p>
-  <p>End date:<%= params[:end_date] unless params[:end_date].nil? %></p>
 
-  <ul>
-    <% @jets.each do |jet| %>
-      <li><%= link_to jet.name, jet_path(jet) %></li>
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1474302770737-173ee21bab63?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1564&q=80">
+    Our Elite Fleets
+</div>
+
+<div class="container m-3">
+  <div style="display:inline-block">
+
+    <%= form_tag jets_path, method: :get do %>
+    <%= text_field_tag :departure,
+        params[:departure],
+        class: "form-control",
+        placeholder: "departure"
+    %>
+
+    <%= text_field_tag :arrival,
+        params[:arrival],
+        class: "form-control",
+        placeholder: "arrival"
+    %>
+
+    <%= number_field_tag :passengers,
+        params[:passengers],
+        class: "form-control",
+        placeholder: "passengers"
+    %>
+
+    <%= date_field_tag :start_date,
+        params[:start_date],
+        class: "form-control",
+        placeholder: "start_date"
+    %>
+
+    <%= date_field_tag :end_date,
+        params[:end_date],
+        class: "form-control",
+        placeholder: "end_date"
+    %>
+
+    <%= submit_tag 'Search', class: "btn btn-primary" %>
     <% end %>
+  </div>
+  <ul>
+    
   </ul>
+</div>
+
+<div class="row">
+    <% @jets.each do |jet| %>   
+     <div class="col-12 col-md-6 col-lg-3">
+      <div class="card w-78">
+        <% if jet.photo.attached? %>
+          <img class="card-img-top" src="<%= cl_image_path jet.photo.key %>" alt="Card image cap">
+        <% else %>
+          <img class="card-img-top" src="https://images.unsplash.com/photo-1566827267844-39de9bcad5ee?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1291&q=80" alt="Card image cap">
+        <% end %>
+          <div class="card-body">
+            <h5 class="card-title"><%= jet.name %></h5>
+            <p class="card-text"><%= jet.origin %></p>
+            <%= link_to "Find out more", jet_path(jet), class: "btn btn-primary" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
 </div>
 
 <div id="map"
