@@ -1,4 +1,4 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1474302770737-173ee21bab63?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1564&q=80);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1474302770737-173ee21bab63?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1564&q=80');">
   <div class="container text-center">
     <h1>Jetsetters</h1>
     <p>Live a high life</p>
@@ -10,31 +10,31 @@
     <%= text_field_tag :departure,
         params[:departure],
         class: "form-control",
-        placeholder: "departure"
+        placeholder: "Departure"
     %>
 
     <%= text_field_tag :arrival,
         params[:arrival],
         class: "form-control",
-        placeholder: "arrival"
+        placeholder: "Arrival"
     %>
 
     <%= number_field_tag :passengers,
         params[:passengers],
         class: "form-control",
-        placeholder: "passengers"
+        placeholder: "Passengers"
     %>
 
     <%= date_field_tag :start_date,
         params[:start_date],
-        class: "form-control",
-        placeholder: "start_date"
+        class: "form-control date-field",
+        placeholder: "Start date"
     %>
 
     <%= date_field_tag :end_date,
         params[:end_date],
-        class: "form-control",
-        placeholder: "end_date"
+        class: "form-control date-field",
+        placeholder: "End date"
     %>
 
     <%= submit_tag 'Search', class: "btn btn-primary" %>
@@ -64,3 +64,6 @@
     <a href="#"><i class="fab fa-linkedin"></i></a>
     </div>
 </footer>
+
+
+
