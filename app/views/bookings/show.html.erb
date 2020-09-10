@@ -1,24 +1,32 @@
-<div class="container m-3">
-  <h3>Booking details</h3>
-
-  <div class="booking-form">
-    <p>Jet: <%= @booking.jet.name %></p>
-    <p>Booking status: <%= @booking.booking_status %></p>
-    <p>From: <%= @booking.jet.origin %></p>
-    <p>To: <%= @booking.destination %></p>
-    <p>Start date: <%= @booking.start_date %></p>
-    <p>End date: <%= @booking.end_date %></p>
-    <p>Passengers: <%= @booking.passengers %></p>
-    <p>Total price: $ <%= @booking.total_price %></p>
-
-    <% if (@booking.jet.user === @booking.user) %>
-      <% if (@booking.booking_status === "Unconfirmed") %>
-        <%= link_to "Accept", booking_path(@booking, booking: {booking_status: "Confirmed"}), method: "patch", class: "btn btn-primary" %>
-        <%= link_to "Reject", booking_path(@booking, booking: {booking_status: "Rejected"}), method: "patch", class: "btn btn-danger" %>
-      <% end %>
-    <% else %>
-      <%= link_to "Edit booking", edit_booking_path(@booking), class: "btn btn-primary" %>
-    <% end %>
+<div class="booking cont m-3">
+  <div class="card-trip">
+    <%= image_tag @booking.jet.photo.key %>
+    <div class="card-trip-infos">
+      <div class="w-100">
+         <% if (@booking.jet.user === @booking.user) %>
+          <% if (@booking.booking_status === "Unconfirmed") %>
+            <%= link_to "Accept", booking_path(@booking, booking: {booking_status: "Confirmed"}), method: "patch", class: "btn btn-primary" %>
+            <%= link_to "Reject", booking_path(@booking, booking: {booking_status: "Rejected"}), method: "patch", class: "btn btn-danger" %>
+          <% end %>
+        <% else %>
+          <%= link_to icon('fas', 'edit'), edit_booking_path(@booking) %>
+        <% end %>
+        <h2>Booking details</h2>
+        <hr>
+        <p><b>Jet:</b> <%= @booking.jet.name %></p>
+        <p><b>Booking status:</b> <%= @booking.booking_status %></p>
+        <p><b>From:</b> <%= @booking.jet.origin %></p>
+        <p><b>To:</b> <%= @booking.destination %></p>
+        <p><b>Start date:</b> <%= @booking.start_date %></p>
+        <p><b>End date:</b> <%= @booking.end_date %></p>
+        <p><b>Passengers:</b> <%= @booking.passengers %></p>
+        <p><b>Total price:</b> $<%= @booking.total_price %></p>
+      </div>
+    </div>
   </div>
+
+ 
 </div>
+
+    
 

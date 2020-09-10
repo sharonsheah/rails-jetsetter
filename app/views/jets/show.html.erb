@@ -1,13 +1,20 @@
-<div class="container m-3">
-  <h1><%= @jet.name %></h1>
-  <%= cl_image_tag @jet.photo.key, height: 300, width: 400, crop: :fill %>
-  <p>Description: <%= @jet.description %></p>
-  <p>Pilot: <strong><%= @jet.pilot_name %></strong></p>
-  <p>Capacity: up to <strong><%= @jet.capacity %></strong> passengers</p>
-  <p>Jet Owner: <strong><%= @user.first_name %> <%= @user.last_name %></strong></p>
-  <p>Price per day (non-refundable): <%= @jet.price %></p>
+<div class="jet-card m-3 row justify-content-md-center">
+<div class="col-12 col-md-8">
+  <%= cl_image_tag @jet.photo.key, crop: :fill %>
+  <div class="jet-info">
+    <div>
+      <h1><%= @jet.name %></h1>
+      <p>Description: <%= @jet.description %></p>
+      <p>Pilot: <strong><%= @jet.pilot_name %></strong></p>
+      <p>Capacity: up to <strong><%= @jet.capacity %></strong> passengers</p>
+    </div>
+    <h2 class="jet-pricing">$<%= @jet.price %></h2>
+    <p>Jet Owner: <strong><%= @user.first_name %> <%= @user.last_name %></strong></p>
+    <%= cl_image_tag @user.photo.key, height: 100, width: 100, crop: :fill, class: "avatar-bordered" %>
+  </div>
+</div>
 
-
+<div class="jet-booking-form col-6 col-md-4">
   <h3><strong>Booking Form</strong></h3>
   <div class="form-wrapper">
     <%= simple_form_for [@jet, @booking] do |f| %>
@@ -20,4 +27,5 @@
       <%= f.submit %>
     <% end %>
   </div>
+</div>
 </div>
