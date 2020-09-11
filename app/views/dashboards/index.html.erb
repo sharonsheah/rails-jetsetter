@@ -1,10 +1,11 @@
-<div class="tabs-container">
+<div class="container">
+    <div class="tabs-container">
 
     <% bookings = [] %>
     <% listings = [] %>
 
     <h2>Your bookings</h2>
-   
+
     <% if @user.bookings.present? %>
         <% @user.bookings.each do |booking| %>
             <% if booking.jet.user === current_user %>
@@ -52,10 +53,10 @@
     <% else %>
         <div class="notice">You don't have any booking yet</div>
     <% end %>
-</div>
+    </div>
 
 
-<div class="tabs-container">
+    <div class="tabs-container">
     <h2>Your listings</h2>
     <% if listings.present? %>
         <table>
@@ -98,5 +99,8 @@
     <% else %>
         <div class="notice">You don't have any listing yet</div>
     <% end %>
+    </div>
+    <div class="d-flex justify-content-around m-3">
+        <%= link_to 'Back to Homepage', :root, class: "btn btn-info" %>
+    </div>
 </div>
-<%= link_to 'Back', :back %>
