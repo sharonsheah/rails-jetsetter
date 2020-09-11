@@ -35,7 +35,7 @@ class JetsController < ApplicationController
     @user = current_user
     @jet.user = @user
     if @jet.save
-      redirect_to jets_path
+      redirect_to jet_path(@jet)
     else
       render :new
     end
