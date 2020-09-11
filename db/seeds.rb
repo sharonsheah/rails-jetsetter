@@ -30,7 +30,7 @@ puts 'Creating 10 default reservations for default user...'
     booking_status: "Unconfirmed",
     destination: "Miami",
     jet: Jet.all.sample,
-    user: User.all.find(66)
+    user: User.all.sample
   )
   booking.save!
 end
