@@ -456,7 +456,7 @@ puts 'Creating 50 default reservations for default user...'
     passengers: 1,
     total_price: 10000,
     booking_status: Booking::STATUS.sample,
-    destination: location.sample,
+    destination: locations.sample,
     jet: Jet.all.sample,
     user: User.all.sample
   )
