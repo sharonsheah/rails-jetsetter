@@ -1,20 +1,27 @@
 <div class="jet-card m-4 row justify-content-md-center">
 <div class="jet-image col-12 col-md-8 mt-3">
-  <%= cl_image_tag @jet.photo.key, crop: :fill %>
+  <%= cl_image_tag @jet.photo.key, height: 400, width: 900, crop: :fill %>
   <div class="jet-info-card">
-      <div class="jet-info">
-        <h1><%= @jet.name %></h1>
-        <p>Description: <%= @jet.description %></p>
-        <p>Pilot: <strong><%= @jet.pilot_name %></strong></p>
-        <p>Capacity: up to <strong><%= @jet.capacity %></strong> passengers</p>
-      </div>
-    <h2 class="jet-pricing">$<%= @jet.price %></h2>
-    <p>Jet Owner: <strong><%= @user.first_name %> <%= @user.last_name %></strong></p>
-    <%= cl_image_tag @user.photo.key, height: 100, width: 100, crop: :fill, class: "avatar-bordered" %>
+    <div class="jet-info">
+      <h1><%= @jet.name %></h1>
+      <p>Description: <%= @jet.description %></p>
+      <br></br>
+      <p>Pilot: <strong><%= @jet.pilot_name %></strong></p>
+      <p>Capacity: up to <strong><%= @jet.capacity %></strong> passengers</p>
+    </div>
+    <div class="price-owner">
+      <h2 class="jet-pricing"><p>$<%= @jet.price %></p></h2>
+      <p>Jet Owner: <strong><%= @user.first_name %> <%= @user.last_name %></strong></p>
+    </div>      
+      <%= cl_image_tag @user.photo.key, height: 100, width: 100, crop: :fill, class: "avatar-bordered" %>
   </div>
 </div>
 
+
   <div class="jet-booking-form col-6 col-md-4">
+
+  <%# insert map here %>
+
     <h3 class= p-3><strong>Booking Form</strong></h3>
     <div class="form-group ">
       <%= simple_form_for [@jet, @booking] do |f| %>
@@ -28,4 +35,8 @@
       <% end %>
     </div>
   </div>
+</div>
+
+<div class="w-100 d-flex justify-content-around mb-5">
+  <%= link_to 'Back to Browse', jets_path, class: "btn btn-info" %>
 </div>

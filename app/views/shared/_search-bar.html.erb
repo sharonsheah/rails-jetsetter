@@ -22,16 +22,18 @@
     <%= date_field_tag :start_date,
         params[:start_date],
         class: "form-control date-field",
+        as: :string,
         placeholder: "Start date"
     %>
 
     <%= date_field_tag :end_date,
         params[:end_date],
         class: "form-control date-field",
+        as: :string,
         placeholder: "End date"
     %>
 
-    <%= submit_tag 'Search', class: "btn btn-primary" %>
+    <%= submit_tag 'Search', class: "btn btn-info" %>
     <% end %>
   </div>
 </div> 
