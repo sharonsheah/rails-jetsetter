@@ -19,22 +19,6 @@ default_user = User.new(
 
 default_user.save!
 
-puts 'Creating 10 default reservations for default user...'
-
-10.times do
-  booking = Booking.new(
-    start_date: 20201010,
-    end_date: 20201010,
-    passengers: 1,
-    total_price: 1000,
-    booking_status: "Unconfirmed",
-    destination: "Miami",
-    jet: Jet.all.sample,
-    user: User.all.sample
-  )
-  booking.save!
-end
-
 puts 'Creating 12 users...'
 
 user_1 = User.new(
@@ -461,3 +445,20 @@ file = URI.open('https://res.cloudinary.com/dfiqhpsxy/image/upload/v1599703327/4
 jet_20.photo.attach(io: file, filename: 'jet20.png', content_type: 'image/png')
 
 jet_20.save!
+
+
+puts 'Creating 50 default reservations for default user...'
+
+50.times do
+  booking = Booking.new(
+    start_date: 20201010,
+    end_date: 20201010,
+    passengers: 1,
+    total_price: 10000,
+    booking_status: Booking::STATUS.sample,
+    destination: location.sample,
+    jet: Jet.all.sample,
+    user: User.all.sample
+  )
+  booking.save!
+end
