@@ -1,0 +1,37 @@
+<div class="container justify-content-center display-inline-block">
+
+    <%= form_tag jets_path, method: :get do %>
+    <%= text_field_tag :departure,
+        params[:departure],
+        class: "form-control",
+        placeholder: "Departure"
+    %>
+
+    <%= text_field_tag :arrival,
+        params[:arrival],
+        class: "form-control",
+        placeholder: "Arrival"
+    %>
+
+    <%= number_field_tag :passengers,
+        params[:passengers],
+        class: "form-control",
+        placeholder: "Passengers"
+    %>
+
+    <%= date_field_tag :start_date,
+        params[:start_date],
+        class: "form-control date-field",
+        placeholder: "Start date"
+    %>
+
+    <%= date_field_tag :end_date,
+        params[:end_date],
+        class: "form-control date-field",
+        placeholder: "End date"
+    %>
+
+    <%= submit_tag 'Search', class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div> 

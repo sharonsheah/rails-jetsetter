@@ -4,56 +4,40 @@
     <p>Live a high life</p>
   </div>
 
-  <div class="container">
+  <%= render 'shared/search-bar' %>
 
-    <%= form_tag jets_path, method: :get do %>
-    <%= text_field_tag :departure,
-        params[:departure],
-        class: "form-control",
-        placeholder: "Departure"
-    %>
-
-    <%= text_field_tag :arrival,
-        params[:arrival],
-        class: "form-control",
-        placeholder: "Arrival"
-    %>
-
-    <%= number_field_tag :passengers,
-        params[:passengers],
-        class: "form-control",
-        placeholder: "Passengers"
-    %>
-
-    <%= date_field_tag :start_date,
-        params[:start_date],
-        class: "form-control date-field",
-        placeholder: "Start date"
-    %>
-
-    <%= date_field_tag :end_date,
-        params[:end_date],
-        class: "form-control date-field",
-        placeholder: "End date"
-    %>
-
-    <%= submit_tag 'Search', class: "btn btn-primary" %>
-    <% end %>
-  
-  <div class="container">
-		<div class="row justify-content-md-center">
-			<%= link_to 'List your Jet', new_jet_path(@jet), class: "btn btn-primary" %>
-
-      <%= link_to 'View all jets', jets_path, class: "btn btn-primary" %>
+<%# cards need fixing %>
+<div class="container my-3">
+  <div class="row">
+    <div class="col-12 col-lg-6">
+      <div class="cards">
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1533229613598-751dc97ec35f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80)">
+          List Your Jet
+        </div>
+      </div>
+      <div class="col-12 col-lg-6">
+        <div class="cards">
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1512100356356-de1b84283e18?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=709&q=80)">
+            View Our Elite Fleet
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+
 
 <div class="container my-3 text-center">
 	<div class="about-us">
 		<h2 class="my-3">About Us</h2>
 		<p class="m-3">Luxurious private jets listed for your convience. Live your dream in the clouds.</p>
-	</div>
+  </div>
+</div>
+
+<div class="container my-3 text-center">
+	<div class="offer">
+		<h2 class="my-3">What we offer</h2>
+    <p>A description and icons for what services we offer</p>
 </div>
 
 <footer>
@@ -64,6 +48,3 @@
     <a href="#"><i class="fab fa-linkedin"></i></a>
     </div>
 </footer>
-
-
-

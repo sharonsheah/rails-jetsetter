@@ -18,7 +18,8 @@ require("channels")
 
 // External imports
 import "bootstrap";
-import flatpickr from "flatpickr";
+import "flatpickr";
+
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -29,6 +30,9 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
 })
 
-document.addEventListener('DOMContentLoaded', function() {
+import flatpickr from "flatpickr";
+
+document.addEventListener('turbolinks:load', function() {
   flatpickr('.date-field');
 })
+
