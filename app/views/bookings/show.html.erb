@@ -17,14 +17,20 @@
         <% end %>
         <h2>Booking details</h2>
         <hr>
-        <p><b>Jet:</b> <%= @booking.jet.name %></p>
-        <p><b>Booking status:</b> <%= @booking.booking_status %></p>
-        <p><b>From:</b> <%= @booking.jet.origin %></p>
-        <p><b>To:</b> <%= @booking.destination %></p>
-        <p><b>Start date:</b> <%= @booking.start_date %></p>
-        <p><b>End date:</b> <%= @booking.end_date %></p>
-        <p><b>Passengers:</b> <%= @booking.passengers %></p>
-        <p><b>Total price:</b> $<%= @booking.total_price %></p>
+        <div class="d-flex">
+          <div class="w-50">
+            <p><b>Jet:</b> <%= @booking.jet.name %></p>
+            <p><b>Booking status:</b> <%= @booking.booking_status %></p>
+            <p><b>From:</b> <%= @booking.jet.origin %></p>
+            <p><b>To:</b> <%= @booking.destination %></p>
+          </div>
+          <div class="w-50">
+            <p><b>Start date:</b> <%= @booking.start_date %></p>
+            <p><b>End date:</b> <%= @booking.end_date %></p>
+            <p><b>Passengers:</b> <%= @booking.passengers %></p>
+            <p><b>Total price:</b> $<%= @booking.total_price %></p>
+          </div>
+        </div>
       </div>
     </div>
   </div>

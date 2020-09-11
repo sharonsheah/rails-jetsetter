@@ -2,16 +2,16 @@
 <div class="jet-image col-12 col-md-8 mt-3">
   <%= cl_image_tag @jet.photo.key, height: 400, width: 900, crop: :fill %>
   <div class="jet-info-card">
-    <div class="jet-info">
+    <div class="jet-info m-4">
       <h1><%= @jet.name %></h1>
       <p>Description: <%= @jet.description %></p>
-      <br></br>
+      <br>
       <p>Pilot: <strong><%= @jet.pilot_name %></strong></p>
       <p>Capacity: up to <strong><%= @jet.capacity %></strong> passengers</p>
+      <p>Jet Owner: <strong><%= @user.first_name %> <%= @user.last_name %></strong></p>
     </div>
     <div class="price-owner">
       <h2 class="jet-pricing"><p>$<%= @jet.price %></p></h2>
-      <p>Jet Owner: <strong><%= @user.first_name %> <%= @user.last_name %></strong></p>
     </div>      
       <%= cl_image_tag @user.photo.key, height: 100, width: 100, crop: :fill, class: "avatar-bordered" %>
   </div>
@@ -20,20 +20,17 @@
 
   <div class="jet-booking-form col-6 col-md-4">
 
-  <%# insert map here %>
-
-    <h3 class= p-3><strong>Booking Form</strong></h3>
-    <div class="form-group ">
-      <%= simple_form_for [@jet, @booking] do |f| %>
+    <%= simple_form_for(@booking) do |f| %>
         <%= f.input :start_date, as: :string, input_html: { class: 'date-field' } %>
         <%= f.input :end_date, as: :string, input_html: { class: 'date-field' }  %>
         <%= f.input :passengers %>
         <%= f.input :destination %>
-        <%= f.hidden_field :total_price, :value => @jet.price %>
+        <%= f.hidden_field :total_price, :value => @booking.jet.price %>
         <%= f.hidden_field :booking_status, :value => "Unconfirmed" %>
+        <%= f.hidden_field :jet_id, :value => @booking.jet.id %>
+        <%= f.hidden_field :user_id, :value => @booking.jet.user.id %>
         <%= f.submit %>
       <% end %>
-    </div>
   </div>
 </div>
 
