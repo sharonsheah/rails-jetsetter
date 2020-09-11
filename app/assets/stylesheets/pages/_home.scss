@@ -22,17 +22,61 @@
     padding-bottom: 50px;
   }
 
-  input {
-    border: 0px;
-    width: 100%;
-    align-items: center;
-    display: inline-block;
+
+  
+  // Small devices (landscape phones, 576px and up)
+  @media (min-width: 576px) {
+    .form {
+      background: white;
+      // display: inline-flex;
+      // width: 100%;
+      align-items: center;
+      // justify-content: center;
+      // padding: 10px;
+      //   border-radius: 30px;
+    }
   }
 
-  label {
-    border-right: 1px solid grey;
-    padding-left: 10px;
+  // Medium devices (tablets, 768px and up)
+  @media (min-width: 768px) {
+    .form {
+      // background: white;
+      // display: inline-flex;
+      // width: 100%;
+      align-items: center;
+      // justify-content: center;
+      // padding: 10px;
+      //   border-radius: 30px;
+    }
   }
+
+  // Large devices (desktops, 992px and up)
+  @media (min-width: 992px) {
+    .form {
+      // background: white;
+      // display: inline-flex;
+      // width: 100%;
+      align-items: center;
+      // justify-content: center;
+      // padding: 10px;
+      //   border-radius: 30px;
+    }
+  }
+
+  // Extra large devices (large desktops, 1200px and up)
+  @media (min-width: 1200px) {
+    .form {
+      // background: white;
+      // display: inline-flex;
+      width: 100%;
+      align-items: center;
+      // justify-content: center;
+      // padding: 10px;
+      // border-radius: 30px;
+    }
+  }
+
+
 }
 
 // Cards

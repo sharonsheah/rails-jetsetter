@@ -1,0 +1,36 @@
+.searchbar {
+    display: inline-flex;
+    background: white;
+    border-radius: 30px;
+    padding-right: 0px;
+    border: 0px;
+    justify-content: center;
+}
+
+.searchbar form {
+    padding: 0;
+    display: inline-flex;
+    width: 100%;
+}
+
+.searchfields {
+    border: 0px;
+    width: 100%;
+    align-items: center;
+    display: inline-block;
+    border-right: 1px solid lightgrey;
+    padding-left: 20px;
+    margin: 15px 0px;
+}
+
+input:focus {
+    outline: none;
+}
+
+.search-button {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    width: 200px;
+    padding: 0 20px;
+    border: 1px solid #42A3B8;
+}
