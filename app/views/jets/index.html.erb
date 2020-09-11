@@ -10,7 +10,7 @@
       <% @jets.each do |jet| %>  
         <div class="col-md-4 col-12"> 
           <%= link_to jet_path(jet) do %>
-            <div class="card">
+            <div class="card card-jets-index">
               <% if jet.photo.attached? %>
                 <img class="card-img-top" src="<%= cl_image_path jet.photo.key %>" alt="Card image cap">
               <% else %>

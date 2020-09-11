@@ -1,5 +1,5 @@
 // Specific CSS for your home-page
-
+// Banner
 .banner {
     background-size: cover;
     background-position: center;
@@ -95,22 +95,36 @@
 
 }
 
-.offer {
-  margin-bottom: 200px;
+// Cards
+.card-landing {
+  border: none;
 }
 
+a .card-landing {
+  text-decoration: none;
+  color: rgba(0,0,0,0.9);
+  transform: scale(0.98);
+  transition: all 0.24s ease-in-out;
+  &:hover {
+    text-decoration: none;
+    color: #17A2B8;
+    transform: scale(1.01);
+  }
+}
+
+// Footer
 footer {
-    height: 10vh;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: #343A40;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0px 50px;
-    color: white;
+  height: 10vh;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #343A40;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 50px;
+  color: white;
 
   .footer-links {
     display: flex;
