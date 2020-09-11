@@ -111,8 +111,8 @@ a .card-landing {
     transform: scale(1.01);
   }
 }
-
-// Footer
+}
+// Footer 
 footer {
   height: 10vh;
   position: fixed;
@@ -130,6 +130,7 @@ footer {
     display: flex;
     align-items: center;
   }
+
   .footer-links a {
     color: white;
     opacity: 0.15;
@@ -137,8 +138,8 @@ footer {
     font-size: 24px;
     padding: 0px 10px;
   }
-    .footer-links a:hover {
-      opacity: 1;
-    }
+
+  .footer-links a:hover {
+    opacity: 1;
   }
-}
+} 
