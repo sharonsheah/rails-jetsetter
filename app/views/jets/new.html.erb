@@ -1,13 +1,20 @@
-<div class="container m-3">
-  <h3><strong>Enter your jet details</strong></h3>
-  <%= simple_form_for (@jet) do |f| %>
-    <%= f.input :name %>
-    <%= f.input :description %>
-    <%= f.input :pilot_name %>
-    <%= f.input :capacity %>
-    <%= f.input :origin %>
-    <%= f.input :price %>
-    <%= f.input :photo, as: :file %>
-    <%= f.submit %>
-  <% end %>
+<div class="w-100 d-flex justify-content-around m-5">
+  <div class="edit-jet w-50">
+    <h3>Enter your jet details</h3>
+    <hr>
+    <%= simple_form_for (@jet) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :description %>
+      <%= f.input :pilot_name %>
+      <%= f.input :capacity %>
+      <%= f.input :origin %>
+      <%= f.input :price %>
+      <%= f.input :photo, as: :file %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>
+
+<div class="w-100 d-flex justify-content-around mb-5">
+  <%= link_to 'Back to Homepage', :root, class: "btn btn-info" %>
 </div>

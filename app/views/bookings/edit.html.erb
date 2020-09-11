@@ -13,30 +13,42 @@
             <%= link_to "Reject", booking_path(@booking, booking: {booking_status: "Rejected"}), method: "patch", class: "btn btn-danger" %>
           <% end %>
         <% end %>
-        <h2>Booking details</h2>
+        <h2>Update booking</h2>
         <hr>
-        <p><b>Jet:</b> <%= @booking.jet.name %></p>
-        <p><b>Booking status:</b> <%= @booking.booking_status %></p>
-        <p><b>From:</b> <%= @booking.jet.origin %></p>
-        <p><b>To:</b> <%= @booking.destination %></p>
-        <p><b>Start date:</b> <%= @booking.start_date %></p>
-        <p><b>End date:</b> <%= @booking.end_date %></p>
-        <p><b>Passengers:</b> <%= @booking.passengers %></p>
-        <p><b>Total price:</b> $<%= @booking.total_price %></p>
+        <div class="d-flex">
+          <div class="w-50">
+            <p><b>Jet:</b> <%= @booking.jet.name %></p>
+            <p><b>Booking status:</b> <%= @booking.booking_status %></p>
+            <p><b>From:</b> <%= @booking.jet.origin %></p>
+            <p><b>To:</b> <%= @booking.destination %></p>
+          </div>
+          <div class="w-50">
+            <p><b>Start date:</b> <%= @booking.start_date %></p>
+            <p><b>End date:</b> <%= @booking.end_date %></p>
+            <p><b>Passengers:</b> <%= @booking.passengers %></p>
+            <p><b>Total price:</b> $<%= @booking.total_price %></p>
+          </div>
+        </div>
       </div>
     </div>
-
-    <%= simple_form_for(@booking) do |f| %>
-    <%= f.input :start_date, as: :string, input_html: { class: 'date-field' } %>
-    <%= f.input :end_date, as: :string, input_html: { class: 'date-field' }  %>
-    <%= f.input :passengers %>
-    <%= f.input :destination %>
-    <%= f.hidden_field :total_price, :value => @booking.jet.price %>
-    <%= f.hidden_field :booking_status, :value => "Unconfirmed" %>
-    <%= f.hidden_field :jet_id, :value => @booking.jet.id %>
-    <%= f.hidden_field :user_id, :value => @booking.jet.user.id %>
-    <%= f.submit %>
-<% end %>
+    <div class="edit-booking p-5">
+      <%= simple_form_for(@booking) do |f| %>
+        <%= f.input :start_date, as: :string, input_html: { class: 'date-field' } %>
+        <%= f.input :end_date, as: :string, input_html: { class: 'date-field' }  %>
+        <%= f.input :passengers %>
+        <%= f.input :destination %>
+        <%= f.hidden_field :total_price, :value => @booking.jet.price %>
+        <%= f.hidden_field :booking_status, :value => "Unconfirmed" %>
+        <%= f.hidden_field :jet_id, :value => @booking.jet.id %>
+        <%= f.hidden_field :user_id, :value => @booking.jet.user.id %>
+        <%= f.submit %>
+      <% end %>
+    </div>
   </div>
 </div>
+
+<div class="w-100 d-flex justify-content-around mb-5">
+    <%= link_to 'Back to Booking', booking_path(@booking), class: "btn btn-info" %>
+</div>
+
 
