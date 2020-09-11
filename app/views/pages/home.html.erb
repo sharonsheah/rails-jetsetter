@@ -1,50 +1,46 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url('https://res.cloudinary.com/dfiqhpsxy/image/upload/v1599788186/jet_exterior.png');">
   <div class="container text-center">
     <h1>Jetsetters</h1>
-    <p>Live a high life</p>
+    <p>Live a high life. Reserve a jet now.</p>
   </div>
 
   <%= render 'shared/search-bar' %>
 
-<%# cards need fixing %>
-<div class="container my-3">
+</div>
+
+<div class="container home-body my-5 p-0">
+  <div class="container my-3 text-center">
+    <div class="offer">
+      <h2 class="my-3">Get started</h2>
+      <p>Look at our luxurious private jets listed with celebrity pilots or list your private jet.</p>
+    </div>
+  </div>
   <div class="row">
-    <div class="col-12 col-lg-6">
-      <div class="cards">
+    <div class="card card-landing col-12 col-lg-6">
+      <%= link_to jets_path do %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1585664156644-e30d5021fb3e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80)">
+        View Our Elite Fleet
+        </div>
+      <% end %>
+    </div>
+    <div class="card card-landing col-12 col-lg-6">
+      <%= link_to new_jet_path do %>
         <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1533229613598-751dc97ec35f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80)">
-          List Your Jet
+        List Your Jet
         </div>
-      </div>
-      <div class="col-12 col-lg-6">
-        <div class="cards">
-          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1512100356356-de1b84283e18?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=709&q=80)">
-            View Our Elite Fleet
-          </div>
-        </div>
-      </div>
+      <% end %>
+      
     </div>
   </div>
 </div>
 
-
-<div class="container my-3 text-center">
-	<div class="about-us">
-		<h2 class="my-3">About Us</h2>
-		<p class="m-3">Luxurious private jets listed for your convience. Live your dream in the clouds.</p>
-  </div>
-</div>
-
-<div class="container my-3 text-center">
-	<div class="offer">
-		<h2 class="my-3">What we offer</h2>
-    <p>A description and icons for what services we offer</p>
-</div>
-
-<footer>
+<div class="container-fluid p-0">
+  <footer>
     <div class="footer-links">
     <a href="#"><i class="fab fa-instagram"></i></a>
     <a href="#"><i class="fab fa-facebook"></i></a>
     <a href="#"><i class="fab fa-twitter"></i></a>
     <a href="#"><i class="fab fa-linkedin"></i></a>
     </div>
-</footer>
+  </footer>
+</div>
