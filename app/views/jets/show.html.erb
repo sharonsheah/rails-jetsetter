@@ -20,15 +20,14 @@
 
   <div class="jet-booking-form col-6 col-md-4">
 
-    <%= simple_form_for(@booking) do |f| %>
+    <%= simple_form_for [ @jet, @booking ] do |f| %>
         <%= f.input :start_date, as: :string, input_html: { class: 'date-field' } %>
         <%= f.input :end_date, as: :string, input_html: { class: 'date-field' }  %>
         <%= f.input :passengers %>
         <%= f.input :destination %>
-        <%= f.hidden_field :total_price, :value => @booking.jet.price %>
+        <%= f.hidden_field :total_price, :value => @jet.price %>
         <%= f.hidden_field :booking_status, :value => "Unconfirmed" %>
-        <%= f.hidden_field :jet_id, :value => @booking.jet.id %>
-        <%= f.hidden_field :user_id, :value => @booking.jet.user.id %>
+        <%= f.hidden_field :jet_id, :value => @jet.id %>
         <%= f.submit %>
       <% end %>
   </div>
