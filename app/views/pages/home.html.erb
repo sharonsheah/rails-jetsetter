@@ -9,16 +9,17 @@
 <%# cards need fixing %>
 <div class="container my-3">
   <div class="row">
-    <div class="col-12 col-lg-6">
-      <div class="cards">
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1533229613598-751dc97ec35f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80)">
-          List Your Jet
+    <%# <div class="col-12 col-lg-6"> %>
+      <%# <div class="cards"> %>
+        <div class="card-category col-12 col-lg-6" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1533229613598-751dc97ec35f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80)">
+        <%= link_to "List Your Jet", new_jet_path %>
         </div>
       </div>
-      <div class="col-12 col-lg-6">
-        <div class="cards">
-          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1512100356356-de1b84283e18?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=709&q=80)">
-            View Our Elite Fleet
+
+      <div class="">
+          <div class="card-category col-12 col-lg-6" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1512100356356-de1b84283e18?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=709&q=80)">
+          <%= link_to "View Our Elite Fleet", jets_path %>
+
           </div>
         </div>
       </div>
