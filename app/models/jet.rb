@@ -3,6 +3,7 @@ class Jet < ApplicationRecord
   has_many :bookings
   has_one_attached :photo
   geocoded_by :origin
+  has_one_attached :photo
   after_validation :geocode, if: :will_save_change_to_origin?
 
   validates :name, presence: true, uniqueness: true, length: { minimum: 3 }
