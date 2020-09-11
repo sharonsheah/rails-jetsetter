@@ -29,15 +29,23 @@ form {
   margin: 20px 20px;
 }
 
-a .card-jets-index {
-  text-decoration: none;
-  color: rgba(0,0,0,0.9);
-  transform: scale(0.98);
-  transition: all 0.24s ease-in-out;
-  &:hover {
+.cards-index {
+  a {
+    text-decoration: none;
+    color: rgba(0,0,0,0.9);
+    
+  }
+  .card-jets-index {
+    transform: scale(0.98);
+    transition: all 0.24s ease-in-out;
+    &:hover {
+      transform: scale(1.01);
+      
+    }
+  }
+  a:hover {
     text-decoration: none;
     color: rgba(0,0,0,1);
-    transform: scale(1.01);
   }
 }
 
