@@ -97,9 +97,14 @@
 
 a {
   color: white;
+
+  :hover {
+    text-decoration: none;
+    color: #17A2B8;
+  }
 }
 
-.card-format {
+.card {
   border: none;
 }
 
