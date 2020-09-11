@@ -1,6 +1,10 @@
 <div class="booking cont m-3">
   <div class="card-trip">
-    
+    <% if @booking.jet.photo.attached? %>
+      <img src="<%= cl_image_path @booking.jet.photo.key %>">
+    <% else %>
+      <img src="https://images.unsplash.com/photo-1566827267844-39de9bcad5ee?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1291&q=80">
+    <% end %>
     <div class="card-trip-infos">
       <div class="w-100">
          <% if (@booking.jet.user === @booking.user) %>
