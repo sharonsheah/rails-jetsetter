@@ -1,5 +1,5 @@
 // Specific CSS for your home-page
-
+// Banner
 .banner {
     background-size: cover;
     background-position: center;
@@ -95,19 +95,24 @@
 
 }
 
-a {
-  color: white;
-
-  :hover {
-    text-decoration: none;
-    color: #17A2B8;
-  }
-}
-
-.card {
+// Cards
+.card-landing {
   border: none;
 }
 
+a .card-landing {
+  text-decoration: none;
+  color: rgba(0,0,0,0.9);
+  transform: scale(0.98);
+  transition: all 0.24s ease-in-out;
+  &:hover {
+    text-decoration: none;
+    color: #17A2B8;
+    transform: scale(1.01);
+  }
+}
+
+// Footer
 footer {
   height: 10vh;
   position: fixed;
