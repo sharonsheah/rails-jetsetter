@@ -1,39 +1,39 @@
-<div class="container justify-content-center display-inline-block">
+<div class="searchbar container justify-content-center display-inline-block">
 
     <%= form_tag jets_path, method: :get do %>
     <%= text_field_tag :departure,
         params[:departure],
-        class: "form-control",
+        class: "searchfields",
         placeholder: "Departure"
     %>
 
     <%= text_field_tag :arrival,
         params[:arrival],
-        class: "form-control",
+        class: "searchfields",
         placeholder: "Arrival"
     %>
 
     <%= number_field_tag :passengers,
         params[:passengers],
-        class: "form-control",
+        class: "searchfields",
         placeholder: "Passengers"
     %>
 
     <%= date_field_tag :start_date,
         params[:start_date],
-        class: "form-control date-field",
+        class: "searchfields date-field",
         as: :string,
         placeholder: "Start date"
     %>
 
     <%= date_field_tag :end_date,
         params[:end_date],
-        class: "form-control date-field",
+        class: "searchfields date-field",
         as: :string,
         placeholder: "End date"
     %>
 
-    <%= submit_tag 'Search', class: "btn btn-info" %>
+    <%= submit_tag 'Search', class: "btn btn-info search-button" %>
     <% end %>
   </div>
 </div> 
