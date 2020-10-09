@@ -7,9 +7,9 @@
   <div class="container mt-3 d-flex justify-content-center">
     <%= render 'shared/search-bar' %>
   </div>
-  <div class="row">
+  <div class="jets-grid">
       <% @jets.each do |jet| %>  
-        <div class="col-md-4 col-12 cards-index"> 
+        <div class="cards-index"> 
           <%= link_to jet_path(jet) do %>
             <div class="card card-jets-index">
               <% if jet.photo.attached? %>
