@@ -71,3 +71,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 #Flatpicker
 gem 'flatpickr_rails'
+
+gem 'active_link_to'
