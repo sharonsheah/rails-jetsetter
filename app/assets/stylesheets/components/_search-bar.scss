@@ -35,3 +35,16 @@ input:focus {
     padding: 0 20px;
     border: 1px solid #42A3B8;
 }
+
+
+// Medium devices (tablets, 768px and up)
+@media (max-width: 768px) {
+    #arrival,
+    #passengers,
+    .date-field {
+        display: none;
+    }
+    .search-button {
+        width: fit-content;
+    }
+}
