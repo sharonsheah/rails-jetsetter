@@ -1,34 +1,45 @@
 <div class="jet-card m-4 row justify-content-md-center">
-<div class="jet-image col-12 col-md-8 mt-3">
-  <%= cl_image_tag @jet.photo.key, height: 400, width: 900, crop: :fill %>
-  <div class="jet-info-card">
-    <div class="jet-info m-4">
-      <h1><%= @jet.name %></h1>
-      <p>Description: <%= @jet.description %></p>
-      <br>
-      <p>Pilot: <strong><%= @jet.pilot_name %></strong></p>
-      <p>Capacity: up to <strong><%= @jet.capacity %></strong> passengers</p>
-      <p>Jet Owner: <strong><%= @user.first_name %> <%= @user.last_name %></strong></p>
+  <div class="jet-image col-12 col-md-8 mt-3">
+    <% if @jet.photo.attached? %>
+    <%= cl_image_tag @jet.photo.key, height: 400, width: 1000, crop: :fill %>
+    <% else %>
+      <img src="https://images.unsplash.com/photo-1474302770737-173ee21bab63?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1382&q=80" alt="jet-img" height="400" width="1000" style="crop:fill">
+    <% end %>
+    <div class="jet-info-card">
+      <div class="jet-info mt-4">
+        <h1><%= @jet.name %></h1>
+        <p>Description: <%= @jet.description %></p>
+        <br>
+        <p>Pilot: <strong><%= @jet.pilot_name %></strong></p>
+        <p>Capacity: up to <strong><%= @jet.capacity %></strong> passengers</p>
+      </div>
+      <div class="price-owner">
+        <p>Jet Owner: <strong><%= @user.first_name %> <%= @user.last_name %></strong></p>
+        <h2 class="jet-pricing"><p>$<%= @jet.price %></p></h2>
+      </div>
+      
+      <% if @user.photo.attached? %>
+        <%= cl_image_tag @user.photo.key, height: 100, width: 100, crop: :fill, class: "avatar-bordered" %>
+      <% else %>
+        <img src="https://images.unsplash.com/photo-1474302770737-173ee21bab63?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1382&q=80" alt="jet-img" height="100" width="100" class="avatar-bordered">
+      <% end %>
     </div>
-    <div class="price-owner">
-      <h2 class="jet-pricing"><p>$<%= @jet.price %></p></h2>
-    </div>      
-      <%= cl_image_tag @user.photo.key, height: 100, width: 100, crop: :fill, class: "avatar-bordered" %>
   </div>
-</div>
 
-
-  <div class="jet-booking-form col-6 col-md-4">
-
-    <%= simple_form_for [@jet, @booking] do |f| %>
+  <div class="jet-booking-form mt-3 col-6 col-md-4">
+    <h1>Make a reservation</h1>
+    <div class="">
+    <%= simple_form_for [ @jet, @booking ] do |f| %>
         <%= f.input :start_date, as: :string, input_html: { class: 'date-field' } %>
         <%= f.input :end_date, as: :string, input_html: { class: 'date-field' }  %>
         <%= f.input :passengers %>
         <%= f.input :destination %>
         <%= f.hidden_field :total_price, :value => @jet.price %>
         <%= f.hidden_field :booking_status, :value => "Unconfirmed" %>
+        <%= f.hidden_field :jet_id, :value => @jet.id %>
         <%= f.submit %>
       <% end %>
+    </div>
   </div>
 </div>
 
