@@ -11,7 +11,7 @@
           <%= link_to jet_path(jet) do %>
             <div class="card card-jets-index">
               <% if jet.photo.attached? %>
-                <img class="card-img-top" src="<%= cl_image_path jet.photo.key %>" alt="Card image cap">
+                <%= cl_image_tag jet.photo.key, class: "card-img-top" %>
               <% else %>
                 <img class="card-img-top" src="https://images.unsplash.com/photo-1566827267844-39de9bcad5ee?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1291&q=80" alt="Card image cap">
               <% end %>

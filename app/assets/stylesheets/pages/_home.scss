@@ -2,9 +2,10 @@
 
 // Banner
 .banner {
-    background-size: cover;
-    background-position: center;
-    padding: 150px 80px;
+  background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url('https://g.foolcdn.com/editorial/images/564624/getty-private-corporate-jet.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 150px 80px;
 
   h1 {
     margin: 0;

@@ -200,10 +200,10 @@ jet_3 = Jet.new(
   user_id: User.all.sample.id
 )
 
-file = URI.open('https://res.cloudinary.com/dfiqhpsxy/image/upload/v1599733854/jet3.png')
-jet_3.photo.attach(io: file, filename: 'jet3.png', content_type: 'image/png')
+# file = URI.open('https://res.cloudinary.com/dfiqhpsxy/image/upload/v1599733854/jet3.png')
+# jet_3.photo.attach(io: file, filename: 'jet3.png', content_type: 'image/png')
 
-jet_3.save!
+# jet_3.save!
 
 jet_4 = Jet.new(
   name: "Boeing 747-8 Intercontinental BBJ",

@@ -1,4 +1,6 @@
 class JetsController < ApplicationController
+  before_action :authenticate_user!, only: [ :new ]
+
   def index
     if params[:departure].present? && params[:passengers].present? 
       @jets = Jet.where("origin LIKE ? AND capacity >= ?", "#{params[:departure]}", "#{params[:passengers]}")
