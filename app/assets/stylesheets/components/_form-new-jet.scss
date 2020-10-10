@@ -1,0 +1,27 @@
+.input-columns {
+    display: flex;
+    justify-content: space-between;
+    width: 80vw;
+    margin: 0 auto;
+    .form-group {
+        width: 32%;
+    }
+    textarea.form-control {
+        height: 38px;
+    }
+}
+
+@media (max-width:750px) {
+    .input-columns {
+        display: block;
+        .form-group {
+            width: -webkit-fill-available;
+        }
+    }
+}
+
+@media (max-width:382px) {
+    .buttons {
+        margin: 0 0 30px 30px;
+    }
+}
