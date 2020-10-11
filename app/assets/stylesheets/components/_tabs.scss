@@ -27,7 +27,7 @@
 }
 
 .tabs-container .notice {
-    width: 400px;
+    width: fit-content;
     border: 2px solid #FFC65A;
     padding: 16px 24px;
     display: flex;
@@ -36,4 +36,24 @@
     box-shadow: 0 0 8px rgba(0,0,0,0.2);
     border-radius: 4px;
     margin: 8px;
+}
+
+.bookings-table {
+    width: -webkit-fill-available;
+}
+
+
+@media(max-width: 1066px) {
+    .md {
+        display: none;
+    }
+    .tabs-container {
+        width: 90vw;
+    }
+}
+  
+@media(max-width: 614px) {
+    .sm {
+        display: none;
+    }
 }

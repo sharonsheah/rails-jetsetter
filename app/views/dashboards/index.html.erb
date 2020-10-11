@@ -17,17 +17,17 @@
     <% end %>
 
     <% if bookings.present? %>
-        <table>
+        <table class="bookings-table">
             <thead>
                 <tr>
-                    <th>ID</th>
+                    <th class="sm">ID</th>
                     <th>Jet Name</th>
-                    <th>Owner</th>
-                    <th>From</th>
-                    <th>Until</th>
-                    <th>Origin</th>
-                    <th>Destination</th>
-                    <th>Passengers</th>
+                    <th class="md">Owner</th>
+                    <th class="md">From</th>
+                    <th class="md">Until</th>
+                    <th class="sm">Origin</th>
+                    <th class="sm">Destination</th>
+                    <th class="md">PAX</th>
                     <th>Status</th>
                     <th colspan="2">Actions</th>
                 </tr>
@@ -35,14 +35,14 @@
             <tbody>
                 <% bookings.each do |booking| %>
                     <tr>
-                        <th scope="row"><%= booking.id %></th>
+                        <th scope="row" class="sm"><%= booking.id %></th>
                         <td><%= link_to booking.jet.name, jet_path(booking.jet.id) %></td>
-                        <td><%= booking.jet.user.first_name %> <%= booking.jet.user.last_name %></td>
-                        <td><%= booking.start_date %></td>
-                        <td><%= booking.end_date %></td>
-                        <td><%= booking.jet.origin %></td>
-                        <td><%= booking.destination %></td>
-                        <td><%= booking.passengers %></td>
+                        <td class="md"><%= booking.jet.user.first_name %> <%= booking.jet.user.last_name %></td>
+                        <td class="md"><%= booking.start_date %></td>
+                        <td class="md"><%= booking.end_date %></td>
+                        <td class="sm"><%= booking.jet.origin %></td>
+                        <td class="sm"><%= booking.destination %></td>
+                        <td class="md"><%= booking.passengers %></td>
                         <td><%= booking.booking_status %></td>
                         <td><%= link_to icon('fas', 'edit'), edit_booking_path(booking), { class: "Edit"} %></td>
                         <td><%= link_to icon('fas', 'info-circle'), booking_path(booking), { class: "Show Details"} %></td>
@@ -53,25 +53,25 @@
     <% else %>
         <div class="notice">You don't have any booking yet</div>
     <% end %>
-    </div>
+</div>
 
 
-    <div class="tabs-container">
+<div class="tabs-container">
 
     <h2>Your listings</h2>
     
     <% if listings.present? %>
-        <table>
+        <table class="bookings-table">
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Jet Name</th>
+                    <th class="sm">ID</th>
+                    <th class="sm">Jet Name</th>
                     <th>Renter</th>
-                    <th>From</th>
-                    <th>Until</th>
-                    <th>Origin</th>
-                    <th>Destination</th>
-                    <th>Passengers</th>
+                    <th class="md">From</th>
+                    <th class="md">Until</th>
+                    <th class="md">Origin</th>
+                    <th class="md">Destination</th>
+                    <th class="md">PAX</th>
                     <th>Status</th>
                     <th colspan="3">Actions</th>
                 </tr>
@@ -79,14 +79,14 @@
             <tbody>
                 <% listings.each do |booking| %>
                     <tr>
-                        <th scope="row"><%= booking.id %></th>
-                        <td><%= link_to booking.jet.name, jet_path(booking.jet.id) %></td>
+                        <th scope="row" class="sm"><%= booking.id %></th>
+                        <td class="sm"><%= link_to booking.jet.name, jet_path(booking.jet.id) %></td>
                         <td><%= booking.user.first_name %> <%= booking.user.last_name %></td>
-                        <td><%= booking.start_date %></td>
-                        <td><%= booking.end_date %></td>
-                        <td><%= booking.jet.origin %></td>
-                        <td><%= booking.destination %></td>
-                        <td><%= booking.passengers %></td>
+                        <td class="md"><%= booking.start_date %></td>
+                        <td class="md"><%= booking.end_date %></td>
+                        <td class="md"><%= booking.jet.origin %></td>
+                        <td class="md"><%= booking.destination %></td>
+                        <td class="md"><%= booking.passengers %></td>
                         <td><%= booking.booking_status %></td>
                         <% if booking.booking_status == "Unconfirmed" %>
                             <td><%= link_to icon('fas', 'check'), booking_path(booking, booking: {booking_status: "Confirmed"}), method: "patch" %></td>
