@@ -1,16 +1,24 @@
-<div class="w-100 d-flex justify-content-around m-5">
-  <div class="edit-jet w-50">
+<div class="d-flex justify-content-center mt-5">
+  <div class="new-jet-form">
     <h3>Enter your jet details</h3>
     <hr>
     <%= simple_form_for (@jet) do |f| %>
-      <%= f.input :name %>
-      <%= f.input :description %>
-      <%= f.input :pilot_name %>
-      <%= f.input :capacity %>
-      <%= f.input :origin %>
-      <%= f.input :price %>
-      <%= f.input :photo, as: :file %>
-      <%= f.submit %>
+      <div>
+        <div class="input-columns">
+          <%= f.input :name %>
+          <%= f.input :description %>
+          <%= f.input :pilot_name %>
+        </div>
+        <div class="input-columns">
+          <%= f.input :capacity %>
+          <%= f.input :origin %>
+          <%= f.input :price %>
+        </div>
+      </div>
+      <div class="buttons">
+        <%= f.input :photo, as: :file %>
+        <%= f.button :submit, class: "btn btn-info" %>
+      </div>
     <% end %>
   </div>
 </div>
