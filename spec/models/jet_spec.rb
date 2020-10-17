@@ -17,11 +17,12 @@ RSpec.describe Jet, type: :model do
       expect(jet).not_to be_valid
     end
     
-    # it "name is unique" do
-    #   existing_jet = Jet.all.first
-    #   jet = Jet.new(name: existing_jet.name)
-    #   expect(jet).not_to be_valid
-    # end
+    it "name is unique" do
+      jet = Jet.new(name: "Mojito")
+      jet2 = Jet.new(name: "Mojito")
+      
+      expect(jet2).not_to be_valid
+    end
   end
   
   describe "description" do

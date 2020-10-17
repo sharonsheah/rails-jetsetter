@@ -6,7 +6,7 @@ feature "User creates jet" do
         visit root_path
         click_on 'List a new jet'
 
-    
+        
         expect(page).to have_css 'form'
     end
 end
