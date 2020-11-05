@@ -25,14 +25,11 @@ import "flatpickr";
 // import { initSelect2 } from '../components/init_select2';
 
 import { initMapbox } from '../plugins/init_mapbox';
+import flatpickr from "flatpickr";
+import { initAutocomplete } from "../plugins/init_autocomplete";
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
-})
-
-import flatpickr from "flatpickr";
-
-document.addEventListener('turbolinks:load', function() {
+  initAutocomplete();
   flatpickr('.date-field');
 })
-
